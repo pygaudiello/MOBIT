@@ -1,211 +1,212 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Telefonix</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #F9F5EB;
-    }
-    header.navbar {
-      background-color: #002B5B;
-      padding: 10px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    .navbar-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-    .logo {
-      background-color: #E4DCCF;
-      padding: 12px 25px;
-      border-radius: 25px;
-      font-weight: bold;
-      font-size: 24px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .menu {
-      display: flex;
-      gap: 25px;
-      margin-top: 10px;
-    }
-    .menu button {
-      background-color: transparent;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-      color: white;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-    .menu button:hover,
-    .menu button.active {
-      background-color: #EA5455;
-    }
-    .menu button:focus {
-      outline: none;
-    }
-    main.dashboard {
-      padding: 30px 10%;
-      margin-top: 20px;
-    }
-    .top-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    .cards-container {
-      flex: 1;
-    }
-    .cards {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .card {
-      background-color: #E4DCCF;
-      padding: 25px;
-      width: 250px;
-      text-align: center;
-      color: #002B5B;
-      font-weight: bold;
-      border: 1px solid #B0B0B0;
-      border-radius: 10px;
-      font-size: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    .card span {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 28px;
-    }
-    .filter-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      min-width: 200px;
-      position: relative;
-    }
-    .filter-button {
-      background-color: #EA5455;
-      padding: 12px 25px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .filter-button:hover {
-      background-color: #D93F4E;
-    }
-    .filter-menu {
-      position: absolute;
-      top: 105%;
-      right: 0;
-      background-color: white;
-      border: 1px solid #B0B0B0;
-      border-radius: 5px;
-      display: none;
-      flex-direction: column;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      padding: 10px 0;
-      transition: opacity 0.3s ease;
-      z-index: 10;
-    }
-    .filter-menu button {
-      background-color: transparent;
-      border: none;
-      padding: 12px 25px;
-      cursor: pointer;
-      font-weight: bold;
-      width: 100%;
-      text-align: left;
-    }
-    .filter-menu button.selected {
-      background-color: #002B5B;
-      color: white;
-    }
-    .graficos {
-      display: flex;
-      justify-content: space-around;
-      gap: 50px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    .grafico-barras {
-      background-color: #EA5455;
-      width: 500px;
-      height: 350px;
-      border-radius: 10px;
-    }
-    .grafico-pizza {
-      background-color: transparent;
-      width: 400px;
-      height: 400px;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Telefonix</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #F9F5EB;
+      }
+      header.navbar {
+          background-color: #002B5B;
+          padding: 10px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .navbar-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+      }
+      .logo {
+          background-color: #8986b3;
+          padding: 12px 25px;
+          border-radius: 25px;
+          font-weight: bold;
+          font-size: 24px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+      }
+      .menu {
+          display: flex;
+          gap: 25px;
+          margin-top: 10px;
+      }
+      .menu button {
+          background-color: transparent;
+          border: none;
+          padding: 12px 25px;
+          border-radius: 20px;
+          cursor: pointer;
+          font-weight: bold;
+          color: white;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+      }
+      .menu button:hover,
+      .menu button.active {
+          background-color: #EA5455;
+      }
+      .menu button:focus {
+          outline: none;
+      }
+      main.dashboard {
+          padding: 30px 10%;
+          margin-top: 20px;
+      }
+      .top-section {
+          display: flex;
+          justify-content: center; /* Centraliza a linha dos cards e filtro */
+          align-items: flex-start;
+          flex-wrap: wrap;
+      }
+      .cards-container {
+          display: flex;
+          align-items: flex-start; /* Alinha verticalmente no topo */
+      }
+      .cards {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: center; /* Centraliza os cards horizontalmente */
+      }
+      .card {
+          background-color: #E4DCCF;
+          padding: 25px;
+          width: 250px;
+          text-align: center;
+          color: #002B5B;
+          font-weight: bold;
+          border: 1px solid #B0B0B0;
+          border-radius: 10px;
+          font-size: 16px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .card span {
+          display: block;
+          margin-bottom: 10px;
+          font-size: 28px;
+      }
+      .filter-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start; /* Alinha verticalmente no topo */
+          position: relative;
+          margin-left: 20px; /* Adiciona espaço entre os cards e o filtro */
+      }
+      .filter-button {
+          background-color: #EA5455;
+          padding: 12px 25px;
+          border: none;
+          cursor: pointer;
+          font-weight: bold;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+      }
+      .filter-button:hover {
+          background-color: #D93F4E;
+      }
+      .filter-menu {
+          position: absolute;
+          top: 105%;
+          right: 0;
+          background-color: white;
+          border: 1px solid #B0B0B0;
+          border-radius: 5px;
+          display: none;
+          flex-direction: column;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          padding: 10px 0;
+          transition: opacity 0.3s ease;
+          z-index: 10;
+      }
+      .filter-menu button {
+          background-color: transparent;
+          border: none;
+          padding: 12px 25px;
+          cursor: pointer;
+          font-weight: bold;
+          width: 100%;
+          text-align: left;
+      }
+      .filter-menu button.selected {
+          background-color: #002B5B;
+          color: white;
+      }
+      .graficos {
+          display: flex;
+          justify-content: space-around;
+          gap: 50px;
+          margin-top: 20px;
+          flex-wrap: wrap;
+      }
+      .grafico-barras {
+          background-color: #EA5455;
+          width: 500px;
+          height: 350px;
+          border-radius: 10px;
+      }
+      .grafico-pizza {
+          background-color: transparent;
+          width: 400px;
+          height: 400px;
+      }
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="navbar-content">
-      <div class="logo">Telefonix</div>
-      <div class="menu">
-        <button class="active">1° Tela</button>
-        <button>2° Tela</button>
-        <button>3° Tela</button>
-        <button>4° Tela</button>
-      </div>
-    </div>
-  </header>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="logo">Telefonix</div>
+            <div class="menu">
+                <button class="active">1° Tela</button>
+                <button>2° Tela</button>
+                <button>3° Tela</button>
+                <button>4° Tela</button>
+            </div>
+        </div>
+    </header>
 
-  <main class="dashboard">
-    <div class="top-section">
-      <div class="cards-container">
-        <div class="cards">
-          <div class="card" id="totalClientes">
-            <span>XX</span>Total de Clientes Cadastrados
-          </div>
-          <div class="card" id="totalPlanos">
-            <span>X</span>Total de Planos Disponíveis
-          </div>
-          <div class="card" id="mediaPlanos">
-            <span>XXX</span>Média de Planos por Clientes
-          </div>
+    <main class="dashboard">
+        <div class="top-section">
+            <div class="cards-container">
+                <div class="cards">
+                    <div class="card" id="totalClientes">
+                        <span>XX</span>Total de Clientes Cadastrados
+                    </div>
+                    <div class="card" id="totalPlanos">
+                        <span>X</span>Total de Planos Disponíveis
+                    </div>
+                    <div class="card" id="mediaPlanos">
+                        <span>XXX</span>Média de Planos por Clientes
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <button class="filter-button" id="filterButton">Filtro de Período</button>
+                    <div class="filter-menu" id="filterMenu">
+                        <button data-period="total" class="selected">Total</button>
+                        <button data-period="30">Últimos 30 dias</button>
+                        <button data-period="180">Últimos 6 meses</button>
+                        <button data-period="365">Último 1 ano</button>
+                        <button data-period="730">Últimos 2 anos</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="filter-container">
-        <button class="filter-button" id="filterButton">Filtro de Período</button>
-        <div class="filter-menu" id="filterMenu">
-          <button data-period="total" class="selected">Total</button>
-          <button data-period="30">Últimos 30 dias</button>
-          <button data-period="180">Últimos 6 meses</button>
-          <button data-period="365">Último 1 ano</button>
-          <button data-period="730">Últimos 2 anos</button>
+        <div class="graficos">
+            <div class="grafico-barras"></div>
+            <div class="grafico-pizza">
+                <canvas id="graficoPizza"></canvas>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="graficos">
-      <div class="grafico-barras"></div>
-      <div class="grafico-pizza">
-        <!-- Gráfico de Pizza será renderizado aqui -->
-        <canvas id="graficoPizza"></canvas>
-      </div>
-    </div>
-  </main>
+    </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
