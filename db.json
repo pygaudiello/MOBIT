@@ -1,239 +1,254 @@
 {
     "clientes": [
         {
-            "id": "9d3a7",
-            "nome": "João Silva",
-            "cpf": "123.456.789-00",
-            "telefone": "(11) 98765-4321",
-            "email": "joao.silva@email.com",
-            "dataCadastro": "2024-03-14"
+        "idCliente": "10001",
+        "nome": "João Silva",
+        "cpf": "123.456.789-00",
+        "telefone": "(11) 98765-4321",
+        "email": "joao.silva@email.com",
+        "dataCadastro": "2024-03-14",
+        "idPlanoContratado": ["101", "103"]
         },
         {
-            "id": "2e472",
-            "nome": "Maria Oliveira",
-            "cpf": "987.654.321-00",
-            "telefone": "(21) 91234-5678",
-            "email": "maria.oliveira@email.com",
-            "dataCadastro": "2024-07-19"
+        "idCliente": "10002",
+        "nome": "Maria Oliveira",
+        "cpf": "987.654.321-00",
+        "telefone": "(21) 91234-5678",
+        "email": "maria.oliveira@email.com",
+        "dataCadastro": "2024-07-19",
+        "idPlanoContratado": ["102"]
         },
         {
-            "id": "d68fd",
-            "nome": "Carlos Souza",
-            "cpf": "123.789.456-00",
-            "telefone": "(31) 92345-6789",
-            "email": "carlos.souza@email.com",
-            "dataCadastro": "2023-08-21"
+        "idCliente": "10003",
+        "nome": "Carlos Souza",
+        "cpf": "123.789.456-00",
+        "telefone": "(31) 92345-6789",
+        "email": "carlos.souza@email.com",
+        "dataCadastro": "2023-08-21",
+        "idPlanoContratado": ["103", "105"]
         },
         {
-            "id": "c2cfb",
-            "nome": "Fernanda Costa",
-            "cpf": "321.654.987-00",
-            "telefone": "(41) 93456-7890",
-            "email": "fernanda.costa@email.com",
-            "dataCadastro": "2024-10-03"
+        "idCliente": "10004",
+        "nome": "Fernanda Costa",
+        "cpf": "321.654.987-00",
+        "telefone": "(41) 93456-7890",
+        "email": "fernanda.costa@email.com",
+        "dataCadastro": "2024-10-03",
+        "idPlanoContratado": ["104"]
         },
         {
-            "id": "4b1b1",
-            "nome": "Roberto Lima",
-            "cpf": "654.321.987-00",
-            "telefone": "(51) 91234-5678",
-            "email": "roberto.lima@email.com",
-            "dataCadastro": "2024-05-09"
+        "idCliente": "10005",
+        "nome": "Roberto Lima",
+        "cpf": "654.321.987-00",
+        "telefone": "(51) 91234-5678",
+        "email": "roberto.lima@email.com",
+        "dataCadastro": "2024-05-09",
+        "idPlanoContratado": ["105"]
         },
         {
-            "id": "f7b44",
-            "nome": "Luciana Pereira",
-            "cpf": "111.222.333-44",
-            "telefone": "(61) 93456-7890",
-            "email": "luciana.pereira@email.com",
-            "dataCadastro": "2024-01-11"
+        "idCliente": "10006",
+        "nome": "Luciana Pereira",
+        "cpf": "111.222.333-44",
+        "telefone": "(61) 93456-7890",
+        "email": "luciana.pereira@email.com",
+        "dataCadastro": "2024-01-11",
+        "idPlanoContratado": ["101", "102"]
         },
         {
-            "id": "a2d58",
-            "nome": "Ricardo Gomes",
-            "cpf": "555.666.777-88",
-            "telefone": "(71) 91234-5678",
-            "email": "ricardo.gomes@email.com",
-            "dataCadastro": "2024-03-22"
+        "idCliente": "10007",
+        "nome": "Ricardo Gomes",
+        "cpf": "555.666.777-88",
+        "telefone": "(71) 91234-5678",
+        "email": "ricardo.gomes@email.com",
+        "dataCadastro": "2024-03-22",
+        "idPlanoContratado": ["102"]
         },
         {
-            "id": "ec908",
-            "nome": "Beatriz Souza",
-            "cpf": "222.333.444-55",
-            "telefone": "(11) 92345-6789",
-            "email": "beatriz.souza@email.com",
-            "dataCadastro": "2024-06-01"
+        "idCliente": "10008",
+        "nome": "Beatriz Souza",
+        "cpf": "222.333.444-55",
+        "telefone": "(11) 92345-6789",
+        "email": "beatriz.souza@email.com",
+        "dataCadastro": "2024-06-01",
+        "idPlanoContratado": ["103"]
         },
         {
-            "id": "c7d4f",
-            "nome": "Paulo Costa",
-            "cpf": "777.888.999-00",
-            "telefone": "(41) 93456-7890",
-            "email": "paulo.costa@email.com",
-            "dataCadastro": "2023-12-10"
+        "idCliente": "10009",
+        "nome": "Paulo Costa",
+        "cpf": "777.888.999-00",
+        "telefone": "(41) 93456-7890",
+        "email": "paulo.costa@email.com",
+        "dataCadastro": "2023-12-10",
+        "idPlanoContratado": ["104"]
         },
         {
-            "id": "5b2ac",
-            "nome": "Tatiane Santos",
-            "cpf": "333.444.555-66",
-            "telefone": "(21) 98765-4321",
-            "email": "tatiane.santos@email.com",
-            "dataCadastro": "2023-09-18"
+        "idCliente": "10010",
+        "nome": "Tatiane Santos",
+        "cpf": "333.444.555-66",
+        "telefone": "(21) 98765-4321",
+        "email": "tatiane.santos@email.com",
+        "dataCadastro": "2023-09-18",
+        "idPlanoContratado": ["105"]
         },
         {
-            "id": "7f1b0",
-            "nome": "Marcos Oliveira",
-            "cpf": "888.999.000-11",
-            "telefone": "(51) 93456-7890",
-            "email": "marcos.oliveira@email.com",
-            "dataCadastro": "2023-11-25"
+        "idCliente": "10011",
+        "nome": "Lucas Almeida",
+        "cpf": "555.111.333-22",
+        "telefone": "(11) 98877-1234",
+        "email": "lucas.almeida@email.com",
+        "dataCadastro": "2024-02-10",
+        "idPlanoContratado": ["102"]
         },
         {
-            "id": "a5d42",
-            "nome": "Gustavo Lima",
-            "cpf": "444.555.666-77",
-            "telefone": "(61) 92345-6789",
-            "email": "gustavo.lima@email.com",
-            "dataCadastro": "2023-10-30"
+        "idCliente": "10012",
+        "nome": "Juliana Ferreira",
+        "cpf": "444.555.666-77",
+        "telefone": "(21) 97654-3210",
+        "email": "juliana.ferreira@email.com",
+        "dataCadastro": "2024-01-18",
+        "idPlanoContratado": ["101", "104"]
         },
         {
-            "id": "b84e6",
-            "nome": "Fabiana Rocha",
-            "cpf": "333.444.555-66",
-            "telefone": "(11) 93456-7890",
-            "email": "fabiana.rocha@email.com",
-            "dataCadastro": "2024-02-15"
+        "idCliente": "10013",
+        "nome": "Eduardo Martins",
+        "cpf": "666.777.888-99",
+        "telefone": "(31) 98765-4321",
+        "email": "eduardo.martins@email.com",
+        "dataCadastro": "2024-03-05",
+        "idPlanoContratado": ["103"]
         },
         {
-            "id": "e4d7c",
-            "nome": "Marcelo Almeida",
-            "cpf": "999.111.222-33",
-            "telefone": "(71) 91234-5678",
-            "email": "marcelo.almeida@email.com",
-            "dataCadastro": "2024-03-10"
+        "idCliente": "10014",
+        "nome": "Tatiane Costa",
+        "cpf": "222.111.333-44",
+        "telefone": "(41) 92345-6789",
+        "email": "tatiane.costa@email.com",
+        "dataCadastro": "2024-04-11",
+        "idPlanoContratado": ["105"]
         },
         {
-            "id": "d97a2",
-            "nome": "Simone Costa",
-            "cpf": "444.555.666-00",
-            "telefone": "(21) 98765-4321",
-            "email": "simone.costa@email.com",
-            "dataCadastro": "2023-12-05"
+        "idCliente": "10015",
+        "nome": "Gustavo Oliveira",
+        "cpf": "333.444.777-99",
+        "telefone": "(51) 91987-6543",
+        "email": "gustavo.oliveira@email.com",
+        "dataCadastro": "2024-02-22",
+        "idPlanoContratado": ["102"]
         },
         {
-            "id": "3b0f8",
-            "nome": "Renato Barbosa",
-            "cpf": "111.222.333-00",
-            "telefone": "(31) 93456-7890",
-            "email": "renato.barbosa@email.com",
-            "dataCadastro": "2023-11-01"
+        "idCliente": "10016",
+        "nome": "Renata Silva",
+        "cpf": "555.888.777-66",
+        "telefone": "(61) 93456-7890",
+        "email": "renata.silva@email.com",
+        "dataCadastro": "2024-03-15",
+        "idPlanoContratado": ["104"]
         },
         {
-            "id": "9c6ad",
-            "nome": "Lucas Martins",
-            "cpf": "555.666.777-88",
-            "telefone": "(61) 92345-6789",
-            "email": "lucas.martins@email.com",
-            "dataCadastro": "2024-04-01"
+        "idCliente": "10017",
+        "nome": "Thiago Rodrigues",
+        "cpf": "999.888.777-22",
+        "telefone": "(71) 91234-5678",
+        "email": "thiago.rodrigues@email.com",
+        "dataCadastro": "2024-06-05",
+        "idPlanoContratado": ["105"]
+        },
+        {
+        "idCliente": "10018",
+        "nome": "Camila Pereira",
+        "cpf": "777.666.555-44",
+        "telefone": "(31) 93334-5566",
+        "email": "camila.pereira@email.com",
+        "dataCadastro": "2024-07-10",
+        "idPlanoContratado": ["101", "104"]
+        },
+        {
+        "idCliente": "10019",
+        "nome": "Leandro Souza",
+        "cpf": "333.222.111-00",
+        "telefone": "(11) 93456-7890",
+        "email": "leandro.souza@email.com",
+        "dataCadastro": "2024-04-05",
+        "idPlanoContratado": ["102"]
+        },
+        {
+        "idCliente": "10020",
+        "nome": "Juliana Lima",
+        "cpf": "111.444.777-88",
+        "telefone": "(21) 91234-5678",
+        "email": "juliana.lima@email.com",
+        "dataCadastro": "2024-01-25",
+        "idPlanoContratado": ["103"]
         }
+
     ],
     "planos": [
         {
-            "id": "1a2bc",
-            "nome": "Plano Básico",
-            "preco": 29.99,
-            "franquiaDados": 5,
-            "minutosLigacao": 100
+        "idPlano": "101",
+        "nome": "Plano Básico",
+        "preco": 29.99,
+        "franquiaDados": 5,
+        "minutosLigacao": 100,
+        "descricao": "Plano básico com 5GB de internet e 100 minutos de ligações."
         },
         {
-            "id": "ffb4e",
-            "nome": "Plano Intermediário",
-            "preco": 49.99,
-            "franquiaDados": 10,
-            "minutosLigacao": 300
+        "idPlano": "102",
+        "nome": "Plano Pro",
+        "preco": 49.99,
+        "franquiaDados": 10,
+        "minutosLigacao": 300,
+        "descricao": "Plano intermediário com 10GB de internet e 300 minutos de ligações."
         },
         {
-            "id": "56a33",
-            "nome": "Plano Avançado",
-            "preco": 69.99,
-            "franquiaDados": 15,
-            "minutosLigacao": 600
+        "idPlano": "103",
+        "nome": "Plano Master",
+        "preco": 69.99,
+        "franquiaDados": 15,
+        "minutosLigacao": 600,
+        "descricao": "Plano avançado com 15GB de internet e 600 minutos de ligações."
         },
         {
-            "id": "2e5d2",
-            "nome": "Plano Premium",
-            "preco": 89.99,
-            "franquiaDados": 20,
-            "minutosLigacao": 1200
+        "idPlano": "104",
+        "nome": "Plano Gold",
+        "preco": 89.99,
+        "franquiaDados": 20,
+        "minutosLigacao": 1200,
+        "descricao": "Plano premium com 20GB de internet e 1200 minutos de ligações."
         },
         {
-            "id": "cd827",
-            "nome": "Plano Corporativo",
-            "preco": 129.99,
-            "franquiaDados": 50,
-            "minutosLigacao": 3000
+        "idPlano": "105",
+        "nome": "Plano Vip",
+        "preco": 129.99,
+        "franquiaDados": 50,
+        "minutosLigacao": 3000,
+        "descricao": "Plano corporativo com 50GB de internet e 3000 minutos de ligações."
         }
     ],
     "clientePlano": [
-        {
-            "clienteId": "9d3a7",
-            "planoId": "1a2bc"
-        },
-        {
-            "clienteId": "2e472",
-            "planoId": "ffb4e"
-        },
-        {
-            "clienteId": "d68fd",
-            "planoId": "56a33"
-        },
-        {
-            "clienteId": "c2cfb",
-            "planoId": "2e5d2"
-        },
-        {
-            "clienteId": "4b1b1",
-            "planoId": "cd827"
-        },
-        {
-            "clienteId": "f7b44",
-            "planoId": "1a2bc"
-        },
-        {
-            "clienteId": "a2d58",
-            "planoId": "ffb4e"
-        },
-        {
-            "clienteId": "ec908",
-            "planoId": "56a33"
-        },
-        {
-            "clienteId": "c7d4f",
-            "planoId": "2e5d2"
-        },
-        {
-            "clienteId": "5b2ac",
-            "planoId": "cd827"
-        },
-        {
-            "clienteId": "7f1b0",
-            "planoId": "1a2bc"
-        },
-        {
-            "clienteId": "a5d42",
-            "planoId": "ffb4e"
-        },
-        {
-            "clienteId": "b84e6",
-            "planoId": "56a33"
-        },
-        {
-            "clienteId": "e4d7c",
-            "planoId": "2e5d2"
-        },
-        {
-            "clienteId": "d97a2",
-            "planoId": "cd827"
-        }
-    ]
-}
+        { "idCliente": "10001", "idPlanoContratado": "101" },
+        { "idCliente": "10001", "idPlanoContratado": "103" },
+        { "idCliente": "10002", "idPlanoContratado": "102" },
+        { "idCliente": "10003", "idPlanoContratado": "103" },
+        { "idCliente": "10003", "idPlanoContratado": "105" },
+        { "idCliente": "10004", "idPlanoContratado": "104" },
+        { "idCliente": "10005", "idPlanoContratado": "105" },
+        { "idCliente": "10006", "idPlanoContratado": "101" },
+        { "idCliente": "10006", "idPlanoContratado": "102" },
+        { "idCliente": "10007", "idPlanoContratado": "102" },
+        { "idCliente": "10008", "idPlanoContratado": "103" },
+        { "idCliente": "10009", "idPlanoContratado": "104" },
+        { "idCliente": "10010", "idPlanoContratado": "105" },
+        { "idCliente": "10011", "idPlanoContratado": "102" },
+        { "idCliente": "10012", "idPlanoContratado": "101" },
+        { "idCliente": "10012", "idPlanoContratado": "104" },
+        { "idCliente": "10013", "idPlanoContratado": "103" },
+        { "idCliente": "10014", "idPlanoContratado": "105" },
+        { "idCliente": "10015", "idPlanoContratado": "102" },
+        { "idCliente": "10016", "idPlanoContratado": "104" },
+        { "idCliente": "10017", "idPlanoContratado": "105" },
+        { "idCliente": "10018", "idPlanoContratado": "101" },
+        { "idCliente": "10018", "idPlanoContratado": "104" },
+        { "idCliente": "10019", "idPlanoContratado": "102" },
+        { "idCliente": "10020", "idPlanoContratado": "103" }
+        ]
+    }
