@@ -1,84 +1,331 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráfico de Pizza - Clientes por Plano</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 40px;
-        }
-        canvas {
-            max-width: 600px;
-            margin: 20px auto;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Telefonix</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F9F5EB;
+    }
+    header.navbar {
+      background-color: #002B5B;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .navbar-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .logo {
+      background-color: #E4DCCF;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .menu {
+      display: flex;
+      gap: 25px;
+      margin-top: 10px;
+    }
+    .menu button {
+      background-color: transparent;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .menu button:hover,
+    .menu button.active {
+      background-color: #EA5455;
+    }
+    .menu button:focus {
+      outline: none;
+    }
+    main.dashboard {
+      padding: 30px 10%;
+      margin-top: 20px;
+    }
+    .top-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .cards-container {
+      flex: 1;
+    }
+    .cards {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background-color: #E4DCCF;
+      padding: 25px;
+      width: 250px;
+      text-align: center;
+      color: #002B5B;
+      font-weight: bold;
+      border: 1px solid #B0B0B0;
+      border-radius: 10px;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card span {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    .filter-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      min-width: 200px;
+      position: relative;
+    }
+    .filter-button {
+      background-color: #EA5455;
+      padding: 12px 25px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .filter-button:hover {
+      background-color: #D93F4E;
+    }
+    .filter-menu {
+      position: absolute;
+      top: 105%;
+      right: 0;
+      background-color: white;
+      border: 1px solid #B0B0B0;
+      border-radius: 5px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+    .filter-menu button {
+      background-color: transparent;
+      border: none;
+      padding: 12px 25px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      text-align: left;
+    }
+    .filter-menu button.selected {
+      background-color: #002B5B;
+      color: white;
+    }
+    .graficos {
+      display: flex;
+      justify-content: space-around;
+      gap: 50px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .grafico-barras {
+      background-color: #EA5455;
+      width: 500px;
+      height: 350px;
+      border-radius: 10px;
+    }
+    .grafico-pizza {
+      background-color: transparent;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
 </head>
 <body>
+  <header class="navbar">
+    <div class="navbar-content">
+      <div class="logo">Telefonix</div>
+      <div class="menu">
+        <button class="active">1° Tela</button>
+        <button>2° Tela</button>
+        <button>3° Tela</button>
+        <button>4° Tela</button>
+      </div>
+    </div>
+  </header>
 
-    <h2>Distribuição de Clientes por Plano</h2>
-    <canvas id="graficoPizza"></canvas>
+  <main class="dashboard">
+    <div class="top-section">
+      <div class="cards-container">
+        <div class="cards">
+          <div class="card" id="totalClientes">
+            <span>XX</span>Total de Clientes Cadastrados
+          </div>
+          <div class="card" id="totalPlanos">
+            <span>X</span>Total de Planos Disponíveis
+          </div>
+          <div class="card" id="mediaPlanos">
+            <span>XXX</span>Média de Planos por Clientes
+          </div>
+        </div>
+      </div>
+      <div class="filter-container">
+        <button class="filter-button" id="filterButton">Filtro de Período</button>
+        <div class="filter-menu" id="filterMenu">
+          <button data-period="total" class="selected">Total</button>
+          <button data-period="30">Últimos 30 dias</button>
+          <button data-period="180">Últimos 6 meses</button>
+          <button data-period="365">Último 1 ano</button>
+          <button data-period="730">Últimos 2 anos</button>
+        </div>
+      </div>
+    </div>
+    <div class="graficos">
+      <div class="grafico-barras"></div>
+      <div class="grafico-pizza">
+        <!-- Gráfico de Pizza será renderizado aqui -->
+        <canvas id="graficoPizza"></canvas>
+      </div>
+    </div>
+  </main>
 
-    <script>
-        async function buscarDados() {
-            const resposta = await fetch('db.json');
-            const db = await resposta.json();
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script>
+    const filterButton = document.getElementById('filterButton');
+    const filterMenu = document.getElementById('filterMenu');
+    let selectedPeriod = 'total';
+    let graficoPizzaInstance = null;  // Armazena a instância do gráfico
 
-            const contagemPlanos = {};
-            db.planos.forEach(plano => contagemPlanos[plano.idPlano] = 0);
+    filterButton.addEventListener('click', () => {
+      filterMenu.style.display = filterMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
 
-            db.clientes.forEach(cliente => {
-                cliente.idPlanoContratado.forEach(idPlano => {
-                    if (contagemPlanos[idPlano] !== undefined) {
-                        contagemPlanos[idPlano]++;
-                    }
-                });
-            });
+    filterMenu.addEventListener('click', (event) => {
+      if (event.target.tagName === 'BUTTON') {
+        selectedPeriod = event.target.dataset.period;
+        document.querySelector('.filter-menu .selected').classList.remove('selected');
+        event.target.classList.add('selected');
+        filterMenu.style.display = 'none';
+        carregarDados();
+      }
+    });
 
-            atualizarGrafico(db, contagemPlanos);
+    async function carregarDados() {
+      try {
+        const resposta = await fetch('db.json');
+        if (!resposta.ok) throw new Error(`Erro ao carregar os dados: ${resposta.status}`);
+        const db = await resposta.json();
+        const today = new Date('2025-03-21');
+        let filteredClientes = db.clientes;
+        if (selectedPeriod !== 'total') {
+          let filterDate;
+          if (selectedPeriod === '30') {
+            filterDate = new Date(today);
+            filterDate.setDate(today.getDate() - 30);
+          } else if (selectedPeriod === '180') {
+            filterDate = new Date(today);
+            filterDate.setMonth(today.getMonth() - 6);
+          } else if (selectedPeriod === '365') {
+            filterDate = new Date(today);
+            filterDate.setFullYear(today.getFullYear() - 1);
+          } else if (selectedPeriod === '730') {
+            filterDate = new Date(today);
+            filterDate.setFullYear(today.getFullYear() - 2);
+          }
+          filteredClientes = db.clientes.filter(cliente => {
+            const cadastroDate = new Date(cliente.dataCadastro);
+            return cadastroDate >= filterDate;
+          });
         }
+        const totalClientes = filteredClientes.length;
+        const totalPlanos = db.planos.length;
+        let totalPlanosContratados = 0;
+        filteredClientes.forEach(cliente => {
+          totalPlanosContratados += cliente.idPlanoContratado.length;
+        });
+        const mediaPlanos = totalClientes > 0 ? (totalPlanosContratados / totalClientes).toFixed(2) : 0;
+        document.getElementById("totalClientes").innerHTML = `<span>${totalClientes}</span>Total de Clientes Cadastrados`;
+        document.getElementById("totalPlanos").innerHTML = `<span>${totalPlanos}</span>Total de Planos Disponíveis`;
+        document.getElementById("mediaPlanos").innerHTML = `<span>${mediaPlanos}</span>Média de Planos por Clientes`;
 
-        function atualizarGrafico(db, contagemPlanos) {
-            const labels = db.planos.map(plano => plano.nome);
-            const data = db.planos.map(plano => contagemPlanos[plano.idPlano]);
+        // Lógica do gráfico de pizza - Filtrando os planos com base no período selecionado
+        const contagemPlanos = {};
+        db.planos.forEach(plano => contagemPlanos[plano.idPlano] = 0);
 
-            grafico.data.labels = labels;
-            grafico.data.datasets[0].data = data;
-            grafico.update(); 
+        filteredClientes.forEach(cliente => {
+          cliente.idPlanoContratado.forEach(idPlano => {
+            if (contagemPlanos[idPlano] !== undefined) {
+              contagemPlanos[idPlano]++;
+            }
+          });
+        });
+
+        // Filtrando somente os planos que foram contratados pelos clientes no período selecionado
+        const labels = [];
+        const data = [];
+        db.planos.forEach(plano => {
+          if (contagemPlanos[plano.idPlano] > 0) {
+            labels.push(plano.nome);
+            data.push(contagemPlanos[plano.idPlano]);
+          }
+        });
+
+        // Verificar se já existe uma instância do gráfico de pizza e destruí-la
+        if (graficoPizzaInstance) {
+          graficoPizzaInstance.destroy();
         }
 
         const ctx = document.getElementById("graficoPizza").getContext("2d");
-        const grafico = new Chart(ctx, {
-            type: "pie",
-            data: {
-                labels: [],
-                datasets: [{
-                    data: [],
-                    backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"]
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: "bottom" },
-                    datalabels: {
-                        anchor: 'end',
-                        align: 'start',
-                        color: '#000',
-                        font: { weight: 'bold', size: 14 },
-                        formatter: function(value) {
-                            return value;
-                        }
-                    }
+        graficoPizzaInstance = new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels: labels,
+            datasets: [{
+              data: data,
+              backgroundColor: ["#EA5455", "#96192D", "#002B5B", "#0081D9", "#00D5E0"]
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: "bottom" },
+              datalabels: {
+                anchor: 'end',
+                align: 'start',
+                color: '#000',
+                font: { weight: 'bold', size: 14 },
+                formatter: function(value) {
+                  return value;
                 }
+              }
             }
+          }
         });
-        buscarDados();
-    </script>
+      } catch (error) {
+        console.error("Erro ao carregar dados:", error);
+      }
+    }
 
+    carregarDados(); // Carregar os dados inicialmente
+  </script>
 </body>
 </html>
