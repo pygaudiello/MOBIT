@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Telefonia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 20%;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .chart-container canvas {
+            width: 45%;
+        }
+        .filters {
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Dashboard de Telefonia</h1>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filters">
+            <label for="periodo">Período:</label>
+            <select id="periodo">
+                <option value="30">Últimos 30 dias</option>
+                <option value="180">Últimos 6 meses</option>
+                <option value="365">Último ano</option>
+            </select>
+            <label for="plano">Plano:</label>
+            <select id="plano">
+                <option value="all">Todos</option>
+                <option value="1a2bc">Plano Básico</option>
+                <option value="ffb4e">Plano Intermediário</option>
+                <option value="56a33">Plano Avançado</option>
+                <option value="2e5d2">Plano Premium</option>
+                <option value="cd827">Plano Corporativo</option>
+            </select>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="cards">
+            <div class="card">
+                <h3>Total de Clientes</h3>
+                <p id="totalClientes">0</p>
+            </div>
+            <div class="card">
+                <h3>Total de Planos</h3>
+                <p id="totalPlanos">0</p>
+            </div>
+            <div class="card">
+                <h3>Média de Planos por Cliente</h3>
+                <p id="mediaPlanos">0</p>
+            </div>
+        </div>
+
+        <!-- Gráficos -->
+        <div class="chart-container">
+            <div>
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // JSON Mockado com 20 clientes
+        const data = {
+            "clientes": Array.from({ length: 20 }, (_, index) => {
+                return {
+                    id: `cliente_${index + 1}`,
+                    nome: `Cliente ${index + 1}`,
+                    cpf: `123.456.789-${String(index).padStart(2, '0')}`,
+                    telefone: `(11) 9${Math.floor(Math.random() * 900000000) + 100000000}`,
+                    email: `cliente${index + 1}@email.com`,
+                    dataCadastro: `2024-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`
+                };
+            }),
+            "planos": [
+                {"id": "1a2bc", "nome": "Plano Básico", "preco": 29.99, "franquiaDados": 5, "minutosLigacao": 100},
+                {"id": "ffb4e", "nome": "Plano Intermediário", "preco": 49.99, "franquiaDados": 10, "minutosLigacao": 300},
+                {"id": "56a33", "nome": "Plano Avançado", "preco": 69.99, "franquiaDados": 15, "minutosLigacao": 600},
+                {"id": "2e5d2", "nome": "Plano Premium", "preco": 89.99, "franquiaDados": 20, "minutosLigacao": 1200},
+                {"id": "cd827", "nome": "Plano Corporativo", "preco": 129.99, "franquiaDados": 50, "minutosLigacao": 3000}
+            ],
+            "clientePlano": [
+                {"clienteId": "cliente_1", "planoId": "1a2bc"},
+                {"clienteId": "cliente_2", "planoId": "1a2bc"},
+                {"clienteId": "cliente_3", "planoId": "ffb4e"},
+                {"clienteId": "cliente_4", "planoId": "ffb4e"},
+                {"clienteId": "cliente_5", "planoId": "56a33"},
+                {"clienteId": "cliente_6", "planoId": "56a33"},
+                {"clienteId": "cliente_7", "planoId": "56a33"},
+                {"clienteId": "cliente_8", "planoId": "2e5d2"},
+                {"clienteId": "cliente_9", "planoId": "2e5d2"},
+                {"clienteId": "cliente_10", "planoId": "cd827"},
+                {"clienteId": "cliente_11", "planoId": "cd827"},
+                {"clienteId": "cliente_12", "planoId": "1a2bc"},
+                {"clienteId": "cliente_13", "planoId": "ffb4e"},
+                {"clienteId": "cliente_14", "planoId": "56a33"},
+                {"clienteId": "cliente_15", "planoId": "2e5d2"},
+                {"clienteId": "cliente_16", "planoId": "cd827"},
+                {"clienteId": "cliente_17", "planoId": "1a2bc"},
+                {"clienteId": "cliente_18", "planoId": "ffb4e"},
+                {"clienteId": "cliente_19", "planoId": "56a33"},
+                {"clienteId": "cliente_20", "planoId": "2e5d2"}
+            ]
+        };
+
+        // Funções para calcular os indicadores
+        const calcularIndicadores = (clientes, clientePlano) => {
+            const totalClientes = clientes.length;
+            const totalPlanos = data.planos.length;
+            const mediaPlanos = (clientePlano.length / totalClientes).toFixed(2);
+            return { totalClientes, totalPlanos, mediaPlanos };
+        };
+
+        // Atualiza os indicadores
+        const updateIndicators = () => {
+            const { totalClientes, totalPlanos, mediaPlanos } = calcularIndicadores(data.clientes, data.clientePlano);
+            document.getElementById('totalClientes').textContent = totalClientes;
+            document.getElementById('totalPlanos').textContent = totalPlanos;
+            document.getElementById('mediaPlanos').textContent = mediaPlanos;
+        };
+
+        // Filtro de período (30 dias, 6 meses, 1 ano)
+        const filterByPeriod = (period) => {
+            const today = new Date();
+            return data.clientes.filter(cliente => {
+                const dataCadastro = new Date(cliente.dataCadastro);
+                const diffTime = today - dataCadastro;
+                const diffDays = diffTime / (1000 * 3600 * 24);
+                return diffDays <= period;
+            });
+        };
+
+        // Atualizar gráficos com filtros
+        const updateCharts = (clientesFiltrados) => {
+            const planosContagem = clientesFiltrados.reduce((acc, cliente) => {
+                const clientePlanoAtual = data.clientePlano.find(cp => cp.clienteId === cliente.id);
+                acc[clientePlanoAtual.planoId] = (acc[clientePlanoAtual.planoId] || 0) + 1;
+                return acc;
+            }, {});
+
+            const planoLabels = data.planos.map(plano => plano.nome);
+            const planoData = planoLabels.map(plano => planosContagem[data.clientePlano.find(clientePlano => clientePlano.planoId === plano.id)?.planoId] || 0);
+
+            // Gráfico de pizza
+            const ctxPie = document.getElementById('pieChart').getContext('2d');
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                    labels: planoLabels,
+                    datasets: [{
+                        data: planoData,
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#FF9F40'],
+                        borderWidth: 1
+                    }]
+                }
+            });
+
+            // Gráfico de barras
+            const mesLabels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+            const clientesPorMes = mesLabels.map((_, index) => clientesFiltrados.filter(cliente => new Date(cliente.dataCadastro).getMonth() === index).length);
+
+            const ctxBar = document.getElementById('barChart').getContext('2d');
+            new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                    labels: mesLabels,
+                    datasets: [{
+                        label: 'Clientes Cadastrados',
+                        data: clientesPorMes,
+                        backgroundColor: '#36A2EB',
+                        borderColor: '#36A2EB',
+                        borderWidth: 1
+                    }]
+                }
+            });
+        };
+
+        // Inicializa o Dashboard
+        const initDashboard = () => {
+            const clientesFiltrados = filterByPeriod(30); // Período inicial de 30 dias
+            updateIndicators();
+            updateCharts(clientesFiltrados);
+        };
+
+        // Atualiza o dashboard quando um filtro é alterado
+        document.getElementById('periodo').addEventListener('change', () => initDashboard());
+        document.getElementById('plano').addEventListener('change', () => initDashboard());
+
+        // Chama a função de inicialização ao carregar
+        window.onload = initDashboard;
+    </script>
+
+</body>
+</html>

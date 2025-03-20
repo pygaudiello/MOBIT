@@ -1,0 +1,239 @@
+{
+    "clientes": [
+        {
+            "id": "9d3a7",
+            "nome": "João Silva",
+            "cpf": "123.456.789-00",
+            "telefone": "(11) 98765-4321",
+            "email": "joao.silva@email.com",
+            "dataCadastro": "2024-03-14"
+        },
+        {
+            "id": "2e472",
+            "nome": "Maria Oliveira",
+            "cpf": "987.654.321-00",
+            "telefone": "(21) 91234-5678",
+            "email": "maria.oliveira@email.com",
+            "dataCadastro": "2024-07-19"
+        },
+        {
+            "id": "d68fd",
+            "nome": "Carlos Souza",
+            "cpf": "123.789.456-00",
+            "telefone": "(31) 92345-6789",
+            "email": "carlos.souza@email.com",
+            "dataCadastro": "2023-08-21"
+        },
+        {
+            "id": "c2cfb",
+            "nome": "Fernanda Costa",
+            "cpf": "321.654.987-00",
+            "telefone": "(41) 93456-7890",
+            "email": "fernanda.costa@email.com",
+            "dataCadastro": "2024-10-03"
+        },
+        {
+            "id": "4b1b1",
+            "nome": "Roberto Lima",
+            "cpf": "654.321.987-00",
+            "telefone": "(51) 91234-5678",
+            "email": "roberto.lima@email.com",
+            "dataCadastro": "2024-05-09"
+        },
+        {
+            "id": "f7b44",
+            "nome": "Luciana Pereira",
+            "cpf": "111.222.333-44",
+            "telefone": "(61) 93456-7890",
+            "email": "luciana.pereira@email.com",
+            "dataCadastro": "2024-01-11"
+        },
+        {
+            "id": "a2d58",
+            "nome": "Ricardo Gomes",
+            "cpf": "555.666.777-88",
+            "telefone": "(71) 91234-5678",
+            "email": "ricardo.gomes@email.com",
+            "dataCadastro": "2024-03-22"
+        },
+        {
+            "id": "ec908",
+            "nome": "Beatriz Souza",
+            "cpf": "222.333.444-55",
+            "telefone": "(11) 92345-6789",
+            "email": "beatriz.souza@email.com",
+            "dataCadastro": "2024-06-01"
+        },
+        {
+            "id": "c7d4f",
+            "nome": "Paulo Costa",
+            "cpf": "777.888.999-00",
+            "telefone": "(41) 93456-7890",
+            "email": "paulo.costa@email.com",
+            "dataCadastro": "2023-12-10"
+        },
+        {
+            "id": "5b2ac",
+            "nome": "Tatiane Santos",
+            "cpf": "333.444.555-66",
+            "telefone": "(21) 98765-4321",
+            "email": "tatiane.santos@email.com",
+            "dataCadastro": "2023-09-18"
+        },
+        {
+            "id": "7f1b0",
+            "nome": "Marcos Oliveira",
+            "cpf": "888.999.000-11",
+            "telefone": "(51) 93456-7890",
+            "email": "marcos.oliveira@email.com",
+            "dataCadastro": "2023-11-25"
+        },
+        {
+            "id": "a5d42",
+            "nome": "Gustavo Lima",
+            "cpf": "444.555.666-77",
+            "telefone": "(61) 92345-6789",
+            "email": "gustavo.lima@email.com",
+            "dataCadastro": "2023-10-30"
+        },
+        {
+            "id": "b84e6",
+            "nome": "Fabiana Rocha",
+            "cpf": "333.444.555-66",
+            "telefone": "(11) 93456-7890",
+            "email": "fabiana.rocha@email.com",
+            "dataCadastro": "2024-02-15"
+        },
+        {
+            "id": "e4d7c",
+            "nome": "Marcelo Almeida",
+            "cpf": "999.111.222-33",
+            "telefone": "(71) 91234-5678",
+            "email": "marcelo.almeida@email.com",
+            "dataCadastro": "2024-03-10"
+        },
+        {
+            "id": "d97a2",
+            "nome": "Simone Costa",
+            "cpf": "444.555.666-00",
+            "telefone": "(21) 98765-4321",
+            "email": "simone.costa@email.com",
+            "dataCadastro": "2023-12-05"
+        },
+        {
+            "id": "3b0f8",
+            "nome": "Renato Barbosa",
+            "cpf": "111.222.333-00",
+            "telefone": "(31) 93456-7890",
+            "email": "renato.barbosa@email.com",
+            "dataCadastro": "2023-11-01"
+        },
+        {
+            "id": "9c6ad",
+            "nome": "Lucas Martins",
+            "cpf": "555.666.777-88",
+            "telefone": "(61) 92345-6789",
+            "email": "lucas.martins@email.com",
+            "dataCadastro": "2024-04-01"
+        }
+    ],
+    "planos": [
+        {
+            "id": "1a2bc",
+            "nome": "Plano Básico",
+            "preco": 29.99,
+            "franquiaDados": 5,
+            "minutosLigacao": 100
+        },
+        {
+            "id": "ffb4e",
+            "nome": "Plano Intermediário",
+            "preco": 49.99,
+            "franquiaDados": 10,
+            "minutosLigacao": 300
+        },
+        {
+            "id": "56a33",
+            "nome": "Plano Avançado",
+            "preco": 69.99,
+            "franquiaDados": 15,
+            "minutosLigacao": 600
+        },
+        {
+            "id": "2e5d2",
+            "nome": "Plano Premium",
+            "preco": 89.99,
+            "franquiaDados": 20,
+            "minutosLigacao": 1200
+        },
+        {
+            "id": "cd827",
+            "nome": "Plano Corporativo",
+            "preco": 129.99,
+            "franquiaDados": 50,
+            "minutosLigacao": 3000
+        }
+    ],
+    "clientePlano": [
+        {
+            "clienteId": "9d3a7",
+            "planoId": "1a2bc"
+        },
+        {
+            "clienteId": "2e472",
+            "planoId": "ffb4e"
+        },
+        {
+            "clienteId": "d68fd",
+            "planoId": "56a33"
+        },
+        {
+            "clienteId": "c2cfb",
+            "planoId": "2e5d2"
+        },
+        {
+            "clienteId": "4b1b1",
+            "planoId": "cd827"
+        },
+        {
+            "clienteId": "f7b44",
+            "planoId": "1a2bc"
+        },
+        {
+            "clienteId": "a2d58",
+            "planoId": "ffb4e"
+        },
+        {
+            "clienteId": "ec908",
+            "planoId": "56a33"
+        },
+        {
+            "clienteId": "c7d4f",
+            "planoId": "2e5d2"
+        },
+        {
+            "clienteId": "5b2ac",
+            "planoId": "cd827"
+        },
+        {
+            "clienteId": "7f1b0",
+            "planoId": "1a2bc"
+        },
+        {
+            "clienteId": "a5d42",
+            "planoId": "ffb4e"
+        },
+        {
+            "clienteId": "b84e6",
+            "planoId": "56a33"
+        },
+        {
+            "clienteId": "e4d7c",
+            "planoId": "2e5d2"
+        },
+        {
+            "clienteId": "d97a2",
+            "planoId": "cd827"
+        }
+    ]
+}
