@@ -78,7 +78,7 @@
         "cpf": "777.888.999-00",
         "telefone": "(41) 93456-7890",
         "email": "paulo.costa@email.com",
-        "dataCadastro": "2023-12-10",
+        "dataCadastro": "2025-03-10",
         "idPlanoContratado": ["104"]
         },
         {
@@ -123,7 +123,7 @@
         "cpf": "222.111.333-44",
         "telefone": "(41) 92345-6789",
         "email": "tatiane.costa@email.com",
-        "dataCadastro": "2024-04-11",
+        "dataCadastro": "2024-02-19",
         "idPlanoContratado": ["105"]
         },
         {
@@ -132,7 +132,7 @@
         "cpf": "333.444.777-99",
         "telefone": "(51) 91987-6543",
         "email": "gustavo.oliveira@email.com",
-        "dataCadastro": "2024-02-22",
+        "dataCadastro": "2025-02-22",
         "idPlanoContratado": ["102"]
         },
         {
@@ -141,7 +141,7 @@
         "cpf": "555.888.777-66",
         "telefone": "(61) 93456-7890",
         "email": "renata.silva@email.com",
-        "dataCadastro": "2024-03-15",
+        "dataCadastro": "2024-03-20",
         "idPlanoContratado": ["104"]
         },
         {
@@ -159,7 +159,7 @@
         "cpf": "777.666.555-44",
         "telefone": "(31) 93334-5566",
         "email": "camila.pereira@email.com",
-        "dataCadastro": "2024-07-10",
+        "dataCadastro": "2025-04-10",
         "idPlanoContratado": ["101", "104"]
         },
         {
@@ -177,7 +177,7 @@
         "cpf": "111.444.777-88",
         "telefone": "(21) 91234-5678",
         "email": "juliana.lima@email.com",
-        "dataCadastro": "2024-01-25",
+        "dataCadastro": "2024-04-25",
         "idPlanoContratado": ["103"]
         }
 
