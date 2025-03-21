@@ -1,4 +1,4 @@
-# Projeto de Sistema de Planos e Clientes
+# Projeto de Sistema de Gestão de planos de telefonia com Dashboard
 
 Este projeto consiste em um sistema de gerenciamento de planos contratados por clientes, onde cada cliente pode ter um ou mais planos associados. O sistema também permite consultar informações sobre planos e clientes, com a estrutura e a arquitetura planejadas para serem escaláveis e de fácil manutenção.
 
