@@ -15,7 +15,7 @@ Este projeto consiste em um sistema de gerenciamento de planos contratados por c
 1. **Clone o repositório:** _git clone https://github.com/usuario/nome-do-repositorio.git_
 2. **Instale as dependências do projeto:** Navegue até o diretório do projeto e execute o comando: _npm install_
 3. **Execute o projeto:** Para rodar o servidor localmente, use o comando: _npm start_ (Caso não for, procure o Go Live do seu VS Code e clique nele até abrir)
-4. **Opção B:** Gravei o funcionamento e postei no Youtube, você poderá assistir clicando aqui. (Vou colocar jajá)
+4. **Opção B:** Gravei o funcionamento e postei no Youtube, você poderá assistir clicando [aqui](https://youtu.be/yvrJsEHyhak)
 5. **Opção C:** Me chame para uma video-chamada e ficarei feliz em mostrar seu funcionamento!
 
 
@@ -38,21 +38,28 @@ A estrutura de arquivos do projeto é a seguinte:
 # Telas
 
 ### Dashboard
-![image](https://github.com/user-attachments/assets/906d08e6-76ce-44f7-94d1-82cb50ff341c)
-![image](https://github.com/user-attachments/assets/1ed7a244-8e45-4177-8952-aabf9fca6598)
-![image](https://github.com/user-attachments/assets/46215f49-ecac-42ee-b80c-8fce42801c5b)
-![image](https://github.com/user-attachments/assets/e5f936f8-5bd4-45ec-8f16-052afb1ed4e5)
-![image](https://github.com/user-attachments/assets/2a359c0b-506d-4f92-9ea8-0b192ab822f8)
-![image](https://github.com/user-attachments/assets/245d8bf5-9367-4a4f-a1c4-aab240b270be)
-![image](https://github.com/user-attachments/assets/513d0475-e75d-400d-a57c-feab56ddf5c3)
+![image](https://github.com/user-attachments/assets/82652d6f-98d5-4eeb-b190-bc00ebe609c2)
+![image](https://github.com/user-attachments/assets/02550556-c8a3-4a8d-a5b5-d1e7a3326aae)
+![image](https://github.com/user-attachments/assets/1a20058c-a493-4668-8881-22537c557318)
+![image](https://github.com/user-attachments/assets/5750bdaf-25ce-44bc-8b71-55e06e915550)
+![image](https://github.com/user-attachments/assets/1c91b89b-d8a1-41ca-af10-f9b5276add7b)
+![image](https://github.com/user-attachments/assets/0f3698ae-c163-46a8-99ec-6adfe0c9907d)
+![image](https://github.com/user-attachments/assets/f917c9fc-4120-4f8a-afb0-5d5b4f0e4e81)
+
 
 ### Gerenciamento de Planos
-![image](https://github.com/user-attachments/assets/7a12d0e0-3e93-464a-8daa-6a5bdda79857)
-![image](https://github.com/user-attachments/assets/85c1d76d-9f3f-4331-bbbe-724c4a634cf0)
+![image](https://github.com/user-attachments/assets/99408873-5d2f-4abb-9d29-537981da2b93)
+![image](https://github.com/user-attachments/assets/8d4371b5-f701-4142-96dd-d4ec4374dc41)
+![image](https://github.com/user-attachments/assets/6fb1ee01-1a9b-41b1-84ae-8ec3907dd8d8)
+
 
 ### Gerenciamento de Clientes
-![image](https://github.com/user-attachments/assets/8029a08f-e649-4c82-b1f3-47a561d84a35)
-![image](https://github.com/user-attachments/assets/960f5bc0-9041-4fd6-9391-ae0ac4cfad83)
+![image](https://github.com/user-attachments/assets/9b0e0816-2039-4028-be80-3fa9447209d9)
+![image](https://github.com/user-attachments/assets/deab1699-70a6-4a30-9816-b318a1087c69)
+![image](https://github.com/user-attachments/assets/3616f802-90e6-4c6e-820c-e41b37482bdb)
+![image](https://github.com/user-attachments/assets/1f9571f3-8c70-4aad-ac8d-a713c64541db)
+
+
 
 ### Associação de Clientes a Plano
 ![image](https://github.com/user-attachments/assets/5c730498-2144-411f-be87-b53f7fe35e3f)
