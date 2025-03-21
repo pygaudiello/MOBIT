@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Telefonix - Tela 4</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F9F5EB;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header.navbar {
+            background-color: #002B5B;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            background-color: #8986b3;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 22px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .menu {
+            display: flex;
+            gap: 25px;
+            margin-top: 10px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .menu button {
+            background-color: transparent;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .menu button:hover,
+        .menu button.active {
+            background-color: #EA5455;
+        }
+        .menu button:focus {
+            outline: none;
+        }
+        .drag-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+        .planos, .clientes {
+            width: 45%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            min-height: 200px;
+            overflow-y: auto;
+        }
+        .planos h3, .clientes h3 {
+            text-align: center;
+        }
+        .item {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .item.associado {
+            background-color: #EA5455;
+            color: white;
+        }
+        footer {
+            background-color: #E4DCCF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            color: #002B5B;
+            font-size: 12px;
+            width: 100%;
+            margin-top: auto;
+        }
+        /* responsividade */
+        @media (max-width: 768px) {
+            .drag-container {
+                flex-direction: column;
+            }
+            .planos, .clientes {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="navbar">
+    <div class="navbar-content">
+        <div class="logo">Telefonix</div>
+        <div class="menu">
+            <button><a href="index.html">1° Tela</a></button>
+            <button><a href="tela2.html">2° Tela</a></button>
+            <button><a href="tela3.html">3° Tela</a></button>
+            <button class="active">4° Tela</button>
+        </div>
+    </div>
+</header>
+
+<main class="dashboard">
+    <h1 style="text-align: center;">Associação de Clientes a Planos</h1>
+    <p style="text-align: center;">Arraste os planos para associá-los aos clientes. Um cliente pode ter vários planos.</p>
+    
+    <div class="drag-container">
+        <!-- Listagem de Planos -->
+        <div class="planos" id="planos">
+            <h3>Planos Disponíveis</h3>
+            <div class="item" id="plano1" draggable="true" data-nome="Plano Básico">
+                Plano Básico
+            </div>
+            <div class="item" id="plano2" draggable="true" data-nome="Plano Pro">
+                Plano Pro
+            </div>
+            <div class="item" id="plano3" draggable="true" data-nome="Plano Master">
+                Plano Master
+            </div>
+            <div class="item" id="plano4" draggable="true" data-nome="Plano Gold">
+                Plano Gold
+            </div>
+            <div class="item" id="plano5" draggable="true" data-nome="Plano Vip">
+                Plano Vip
+            </div>
+        </div>
+        
+        <!-- Listagem de Clientes -->
+        <div class="clientes" id="clientes">
+            <h3>Clientes</h3>
+            <div class="item" id="cliente1" draggable="true">
+                João Silva
+            </div>
+            <div class="item" id="cliente2" draggable="true">
+                Maria Oliveira
+            </div>
+            <div class="item" id="cliente3" draggable="true">
+                Carlos Souza
+            </div>
+            <div class="item" id="cliente4" draggable="true">
+                Fernanda Costa
+            </div>
+            <div class="item" id="cliente5" draggable="true">
+                Roberto Lima
+            </div>
+            <div class="item" id="cliente6" draggable="true">
+                Luciana Pereira
+            </div>
+            <div class="item" id="cliente7" draggable="true">
+                Ricardo Gomes
+            </div>
+            <div class="item" id="cliente8" draggable="true">
+                Beatriz Souza
+            </div>
+            <div class="item" id="cliente9" draggable="true">
+                Paulo Costa
+            </div>
+            <div class="item" id="cliente10" draggable="true">
+                Tatiane Santos
+            </div>
+            <div class="item" id="cliente11" draggable="true">
+                Lucas Almeida
+            </div>
+            <div class="item" id="cliente12" draggable="true">
+                Juliana Ferreira
+            </div>
+            <div class="item" id="cliente13" draggable="true">
+                Eduardo Martins
+            </div>
+            <div class="item" id="cliente14" draggable="true">
+                Tatiane Costa
+            </div>
+            <div class="item" id="cliente15" draggable="true">
+                Gustavo Oliveira
+            </div>
+            <div class="item" id="cliente16" draggable="true">
+                Renata Silva
+            </div>
+            <div class="item" id="cliente17" draggable="true">
+                Thiago Rodrigues
+            </div>
+            <div class="item" id="cliente18" draggable="true">
+                Camila Pereira
+            </div>
+            <div class="item" id="cliente19" draggable="true">
+                Leandro Souza
+            </div>
+            <div class="item" id="cliente20" draggable="true">
+                Juliana Lima
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    Made By: Paola Yêda
+</footer>
+
+<script>
+    const planos = document.getElementById("planos");
+    const clientes = document.getElementById("clientes");
+
+    // Função para permitir o arraste dos itens
+    const dragStart = (event) => {
+        event.dataTransfer.setData("text", event.target.id);
+    };
+
+    // Função para permitir o arraste para os containers
+    const allowDrop = (event) => {
+        event.preventDefault();
+    };
+
+    // Função para fazer o drop de um item
+    const dropItem = (event, targetContainer) => {
+        event.preventDefault();
+        const itemId = event.dataTransfer.getData("text");
+        const draggedItem = document.getElementById(itemId);
+
+        // Verifica se o item é um plano ou cliente
+        const itemType = draggedItem.id.startsWith("plano") ? "plano" : "cliente";
+
+        if (itemType === "plano") {
+            if (targetContainer === planos) {
+                draggedItem.classList.remove("associado");
+                alert(`${draggedItem.innerText} desassociado do cliente.`);
+            } else {
+                draggedItem.classList.add("associado");
+                alert(`${draggedItem.innerText} associado ao cliente.`);
+            }
+        }
+
+        // Adiciona o plano ao cliente, mantendo-o visível na lista
+        targetContainer.appendChild(draggedItem);
+    };
+
+    // Adicionando os eventos de drag-and-drop
+    const addDragEvents = () => {
+        const items = document.querySelectorAll(".item");
+        items.forEach((item) => {
+            item.addEventListener("dragstart", dragStart);
+            item.addEventListener("dragover", allowDrop);
+            item.addEventListener("drop", (event) => dropItem(event, event.target.closest(".planos, .clientes")));
+        });
+    };
+
+    addDragEvents();
+</script>
+</body>
+</html>
