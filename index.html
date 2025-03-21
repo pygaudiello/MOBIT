@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Telefonix</title>
-  <style>
-      body {
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard Telefonix</title>
+<style>
+    body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #F9F5EB;
-      }
-      header.navbar {
+    }
+    header.navbar {
             background-color: #002B5B;
             padding: 10px 0;
             display: flex;
@@ -19,14 +19,14 @@
             justify-content: center;
             color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-      .navbar-content {
+    }
+    .navbar-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-      }
-      .logo {
+    }
+    .logo {
             background-color: #8986b3;
             padding: 12px 20px;
             border-radius: 25px;
@@ -34,17 +34,17 @@
             font-size: 22px;
             letter-spacing: 1px;
             text-transform: uppercase;
-      }
-      .menu a {
+    }
+    .menu a {
         text-decoration: none;
         color: inherit;
     }
-      .menu {
+    .menu {
             display: flex;
             gap: 25px;
             margin-top: 10px;
-      }
-      .menu button {
+    }
+    .menu button {
             background-color: transparent;
             border: none;
             padding: 12px 25px;
@@ -54,35 +54,35 @@
             color: white;
             font-size: 16px;
             transition: background-color 0.3s ease;
-      }
-      .menu button:hover,
-      .menu button.active {
+    }
+    .menu button:hover,
+    .menu button.active {
             background-color: #EA5455;
-      }
-      .menu button:focus {
+    }
+    .menu button:focus {
             outline: none;
-      }
-      main.dashboard {
+    }
+    main.dashboard {
             padding: 30px 10%;
             margin-top: 20px;
-      }
-      .top-section {
+    }
+    .top-section {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
-      }
-      .cards-container {
+    }
+    .cards-container {
             display: flex;
             align-items: flex-start;
-      }
-      .cards {
+    }
+    .cards {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
-      }
-      .card {
+    }
+    .card {
             background-color: #E4DCCF;
             padding: 25px;
             width: 250px;
@@ -93,20 +93,20 @@
             border-radius: 10px;
             font-size: 16px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-      .card span {
+    }
+    .card span {
             display: block;
             margin-bottom: 10px;
             font-size: 28px;
-      }
-      .filter-container {
+    }
+    .filter-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
             margin-left: 20px;
-      }
-      .filter-button {
+    }
+    .filter-button {
             background-color: #EA5455;
             padding: 12px 25px;
             border: none;
@@ -115,11 +115,11 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
             color:#000c1a;
-      }
-      .filter-button:hover {
+    }
+    .filter-button:hover {
             background-color: #D93F4E;
-      }
-      .filter-menu {
+    }
+    .filter-menu {
             position: absolute;
             top: 105%;
             right: 0;
@@ -133,8 +133,8 @@
             transition: opacity 0.3s ease;
             z-index: 10;
             color:#002B5B;
-      }
-      .filter-menu button {
+    }
+    .filter-menu button {
             background-color: transparent;
             border: none;
             padding: 12px 25px;
@@ -143,44 +143,44 @@
             width: 100%;
             text-align: left;
             color: #002B5B;
-      }
-      .filter-menu button.selected {
+    }
+    .filter-menu button.selected {
             background-color: #002B5B;
             color: white;
-      }
-      .date-today {
+    }
+    .date-today {
             margin-top: 2px;
             font-size: 12px;
             font-weight: bold;
             color: #002B5B;
-      }
-      .graficos {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #002B5B;
-          margin-top: 30px; /* Ajuste aqui o espaçamento superior se necessário */
-          margin-bottom: 20px; /* Adiciona uma margem inferior menor */
-          flex-wrap: wrap;
-      }
-      .grafico-barras {
-          background-color: transparent;
-          color: #002B5B;
-          width: 680px;
-          height: 500px;
-          border-radius: 10px;
-          margin-left: 20px;
-          order: 2;
-      }
-      .grafico-pizza {
-          background-color: transparent;
-          color: #002B5B;
-          width: 400px;
-          height: 500px;
-          margin-right: 20px;
-          order: 1;
-      }
-      footer {
+    }
+    .graficos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #002B5B;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    .grafico-barras {
+        background-color: transparent;
+        color: #002B5B;
+        width: 680px;
+        height: 500px;
+        border-radius: 10px;
+        margin-left: 20px;
+        order: 2;
+    }
+    .grafico-pizza {
+        background-color: transparent;
+        color: #002B5B;
+        width: 400px;
+        height: 500px;
+        margin-right: 20px;
+        order: 1;
+    }
+    footer {
         background-color: #E4DCCF;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px 0;
@@ -255,174 +255,172 @@
         let graficoBarrasInstance = null;
 
         filterButton.addEventListener('click', () => {
-          filterMenu.style.display = filterMenu.style.display === 'flex' ? 'none' : 'flex';
+            filterMenu.style.display = filterMenu.style.display === 'flex' ? 'none' : 'flex';
         });
 
         filterMenu.addEventListener('click', (event) => {
-          if (event.target.tagName === 'BUTTON') {
+            if (event.target.tagName === 'BUTTON') {
             selectedPeriod = event.target.dataset.period;
             document.querySelector('.filter-menu .selected').classList.remove('selected');
             event.target.classList.add('selected');
             filterMenu.style.display = 'none';
             carregarDados();
-          }
+        }
         });
 
-        // Exibir a data de hoje
+        // exibição do dia atual
         function exibirDataHoje() {
-          const hoje = new Date();
-          const dia = hoje.getDate().toString().padStart(2, '0');
-          const mes = (hoje.getMonth() + 1).toString().padStart(2, '0');
-          const ano = hoje.getFullYear();
-          dateTodayElement.textContent = `${dia}/${mes}/${ano}`;
+            const hoje = new Date();
+            const dia = hoje.getDate().toString().padStart(2, '0');
+            const mes = (hoje.getMonth() + 1).toString().padStart(2, '0');
+            const ano = hoje.getFullYear();
+            dateTodayElement.textContent = `${dia}/${mes}/${ano}`;
         }
         async function carregarDados() {
-          try {
-              const resposta = await fetch('db.json');
-              if (!resposta.ok) throw new Error(`Erro ao carregar os dados: ${resposta.status}`);
-              const db = await resposta.json();
-              const today = new Date();
-              let filteredClientes = db.clientes;
-  
-              // Filtragem para o gráfico geral
-              if (selectedPeriod !== 'total') {
-                  let filterDate;
-                  if (selectedPeriod === '30') {
-                      filterDate = new Date(today);
-                      filterDate.setDate(today.getDate() - 30);
-                  } else if (selectedPeriod === '180') {
-                      filterDate = new Date(today);
-                      filterDate.setMonth(today.getMonth() - 6);
-                  } else if (selectedPeriod === '365') {
-                      filterDate = new Date(today);
-                      filterDate.setFullYear(today.getFullYear() - 1);
-                  } else if (selectedPeriod === '730') {
-                      filterDate = new Date(today);
-                      filterDate.setFullYear(today.getFullYear() - 2);
-                  }
-                  filteredClientes = db.clientes.filter(cliente => {
-                      const cadastroDate = new Date(cliente.dataCadastro);
-                      return cadastroDate >= filterDate;
-                  });
-              }
-  
-              const totalClientes = filteredClientes.length;
-              const totalPlanos = db.planos.length;
-              let totalPlanosContratados = 0;
-              filteredClientes.forEach(cliente => {
-                  totalPlanosContratados += cliente.idPlanoContratado.length;
-              });
-              const mediaPlanos = totalClientes > 0 ? (totalPlanosContratados / totalClientes).toFixed(2) : 0;
-              document.getElementById("totalClientes").innerHTML = `<span>${totalClientes}</span>Total de Clientes Cadastrados`;
-              document.getElementById("totalPlanos").innerHTML = `<span>${totalPlanos}</span>Total de Planos Disponíveis`;
-              document.getElementById("mediaPlanos").innerHTML = `<span>${mediaPlanos}</span>Média de Planos por Clientes`;
-  
-              // Lógica do gráfico de pizza
-              const contagemPlanos = {};
-              db.planos.forEach(plano => contagemPlanos[plano.idPlano] = 0);
-  
-              filteredClientes.forEach(cliente => {
-                  cliente.idPlanoContratado.forEach(idPlano => {
-                      if (contagemPlanos[idPlano] !== undefined) {
-                          contagemPlanos[idPlano]++;
-                      }
-                  });
-              });
-  
-              const labels = [];
-              const data = [];
-              db.planos.forEach(plano => {
-                  if (contagemPlanos[plano.idPlano] > 0) {
-                      labels.push(plano.nome);
-                      data.push(contagemPlanos[plano.idPlano]);
-                  }
-              });
-  
-              if (graficoPizzaInstance) {
-                  graficoPizzaInstance.destroy();
-              }
-  
-              const ctxPizza = document.getElementById("graficoPizza").getContext("2d");
-              graficoPizzaInstance = new Chart(ctxPizza, {
-                  type: "pie",
-                  data: {
-                      labels: labels,
-                      datasets: [{
-                          data: data,
-                          backgroundColor: ["#EA5455", "#96192D", "#002B5B", "#0081D9", "#00D5E0"]
-                      }]
-                  },
-                  options: {
-                      responsive: true,
-                      plugins: {
-                          legend: { position: "bottom" },
-                          datalabels: {
-                              anchor: 'end',
-                              align: 'start',
-                              color: '#002B5B',
-                              font: { weight: 'bold', size: 14 },
-                              formatter: function(value) {
-                                  return value;
-                              }
-                          }
-                      }
-                  }
-              });
-  
-              const clientesPorMes = Array(12).fill(0);
-  
-              const oneYearAgo = new Date();
-              oneYearAgo.setFullYear(today.getFullYear() - 1);
-              
-              db.clientes.forEach(cliente => {
-                  const cadastroDate = new Date(cliente.dataCadastro);
-                  if (cadastroDate >= oneYearAgo) {
-                      const monthIndex = cadastroDate.getMonth();
-                      clientesPorMes[monthIndex]++;
-                  }
-              });
-  
-              if (graficoBarrasInstance) {
-                  graficoBarrasInstance.destroy();
-              }
-  
-              const ctxBarras = document.getElementById("graficoBarras").getContext("2d");
-              graficoBarrasInstance = new Chart(ctxBarras, {
-                  type: "bar",
-                  data: {
-                      labels: [
-                          'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
-                          'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
-                      ],
-                      datasets: [{
-                          label: 'Clientes Cadastrados por Mês no Último Ano',
-                          data: clientesPorMes,
-                          color: '#002B5B',
-                          backgroundColor: '#EA5455',
-                          borderColor: '#B0B0B0',
-                          borderWidth: 1
-                      }]
-                  },
-                  options: {
-                      responsive: true,
-                      scales: {
-                          y: {
-                              beginAtZero: true
-                          }
-                      }
-                  }
-              });
-  
-          } catch (erro) {
-              console.error(erro);
-          }
-      }
-  
-      exibirDataHoje();
-      carregarDados();
-  </script>
+            try {
+                const resposta = await fetch('db.json');
+                if (!resposta.ok) throw new Error(`Erro ao carregar os dados: ${resposta.status}`);
+                const db = await resposta.json();
+                const today = new Date();
+                let filteredClientes = db.clientes;
+              // filtragem
+                if (selectedPeriod !== 'total') {
+                    let filterDate;
+                    if (selectedPeriod === '30') {
+                        filterDate = new Date(today);
+                        filterDate.setDate(today.getDate() - 30);
+                    } else if (selectedPeriod === '180') {
+                        filterDate = new Date(today);
+                        filterDate.setMonth(today.getMonth() - 6);
+                    } else if (selectedPeriod === '365') {
+                        filterDate = new Date(today);
+                        filterDate.setFullYear(today.getFullYear() - 1);
+                    } else if (selectedPeriod === '730') {
+                        filterDate = new Date(today);
+                        filterDate.setFullYear(today.getFullYear() - 2);
+                    }
+                    filteredClientes = db.clientes.filter(cliente => {
+                        const cadastroDate = new Date(cliente.dataCadastro);
+                        return cadastroDate >= filterDate;
+                    });
+                }
+                const totalClientes = filteredClientes.length;
+                const totalPlanos = db.planos.length;
+                let totalPlanosContratados = 0;
+                filteredClientes.forEach(cliente => {
+                    totalPlanosContratados += cliente.idPlanoContratado.length;
+                });
+                const mediaPlanos = totalClientes > 0 ? (totalPlanosContratados / totalClientes).toFixed(2) : 0;
+                document.getElementById("totalClientes").innerHTML = `<span>${totalClientes}</span>Total de Clientes Cadastrados`;
+                document.getElementById("totalPlanos").innerHTML = `<span>${totalPlanos}</span>Total de Planos Disponíveis`;
+                document.getElementById("mediaPlanos").innerHTML = `<span>${mediaPlanos}</span>Média de Planos por Clientes`;
+
+                // gráfico de pizza
+                const contagemPlanos = {};
+                db.planos.forEach(plano => contagemPlanos[plano.idPlano] = 0);
+
+                filteredClientes.forEach(cliente => {
+                    cliente.idPlanoContratado.forEach(idPlano => {
+                        if (contagemPlanos[idPlano] !== undefined) {
+                            contagemPlanos[idPlano]++;
+                        }
+                    });
+                });
+    
+                const labels = [];
+                const data = [];
+                db.planos.forEach(plano => {
+                    if (contagemPlanos[plano.idPlano] > 0) {
+                        labels.push(plano.nome);
+                        data.push(contagemPlanos[plano.idPlano]);
+                    }
+                });
+    
+                if (graficoPizzaInstance) {
+                    graficoPizzaInstance.destroy();
+                }
+    
+                const ctxPizza = document.getElementById("graficoPizza").getContext("2d");
+                graficoPizzaInstance = new Chart(ctxPizza, {
+                    type: "pie",
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: data,
+                            backgroundColor: ["#EA5455", "#96192D", "#002B5B", "#0081D9", "#00D5E0"]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: "bottom" },
+                            datalabels: {
+                                anchor: 'end',
+                                align: 'start',
+                                color: '#002B5B',
+                                font: { weight: 'bold', size: 14 },
+                                formatter: function(value) {
+                                    return value;
+                                }
+                            }
+                        }
+                    }
+                });
+    
+                const clientesPorMes = Array(12).fill(0);
+    
+                const oneYearAgo = new Date();
+                oneYearAgo.setFullYear(today.getFullYear() - 1);
+                
+                db.clientes.forEach(cliente => {
+                    const cadastroDate = new Date(cliente.dataCadastro);
+                    if (cadastroDate >= oneYearAgo) {
+                        const monthIndex = cadastroDate.getMonth();
+                        clientesPorMes[monthIndex]++;
+                    }
+                });
+    
+                if (graficoBarrasInstance) {
+                    graficoBarrasInstance.destroy();
+                }
+    
+                const ctxBarras = document.getElementById("graficoBarras").getContext("2d");
+                graficoBarrasInstance = new Chart(ctxBarras, {
+                    type: "bar",
+                    data: {
+                        labels: [
+                            'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+                            'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
+                        ],
+                        datasets: [{
+                            label: 'Clientes Cadastrados por Mês no Último Ano',
+                            data: clientesPorMes,
+                            color: '#002B5B',
+                            backgroundColor: '#EA5455',
+                            borderColor: '#B0B0B0',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+    
+            } catch (erro) {
+                console.error(erro);
+            }
+        }
+    
+        exibirDataHoje();
+        carregarDados();
+</script>
 </body>
 <footer>
-  Made By: Paola Yêda
+    Made By: Paola Yêda
 </footer>
 </html>
