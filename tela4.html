@@ -272,7 +272,7 @@
 
             if (originalPlan) {
                 const newPlan = originalPlan.cloneNode(true);
-                newPlan.id = `copy-${planId}-${Date.now()}`; // Evita IDs duplicados
+                newPlan.id = `copy-${planId}-${Date.now()}`;
                 newPlan.ondragstart = drag;
                 target.appendChild(newPlan);
             }
