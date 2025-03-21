@@ -1,37 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dash Telefonia</title>
+    <title>Gráfico de Barras</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #grafico {
+            width: 80%;
+            height: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .legenda {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #4b4b4b;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div>
+
+    <div id="grafico">
         <canvas id="myChart"></canvas>
+        <p class="legenda">Clientes Cadastrados no Último Ano</p>
     </div>
+
+    <script>
+        fetch('db.json')
+            .then(response => response.json())
+            .then(data => {
+                const clientes = data.clientes;
+                const hoje = new Date();
+                const ultimoAno = new Date();
+                ultimoAno.setFullYear(hoje.getFullYear() - 1);
+
+                const clientesUltimoAno = clientes.filter(cliente => {
+                    const dataCadastro = new Date(cliente.dataCadastro);
+                    return dataCadastro >= ultimoAno && dataCadastro <= hoje;
+                });
+
+                const meses = Array(12).fill(0);
+                clientesUltimoAno.forEach(cliente => {
+                    const mesCadastro = new Date(cliente.dataCadastro).getMonth();
+                    meses[mesCadastro]++;
+                });
+
+                const labels = [
+                    'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+                    'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
+                ];
+
+                const ctx = document.getElementById('myChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Clientes Cadastrados',
+                            data: meses,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { display: false }
+                            },
+                            x: {
+                                grid: { display: false }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+    </script>
+
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-    type: 'polarArea',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-        y: {
-            beginAtZero: true
-        }
-        }
-    }
-    });
-</script>
 </html>
