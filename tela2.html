@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Telefonix - Tela 2</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F9F5EB;
+    }
+    header.navbar {
+            background-color: #002B5B;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .navbar-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+    }
+    .logo {
+            background-color: #8986b3;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 22px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+    }
+    .menu a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .menu {
+            display: flex;
+            gap: 25px;
+            margin-top: 10px;
+    }
+    .menu button {
+            background-color: transparent;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+    }
+    .menu button:hover,
+    .menu button.active {
+            background-color: #EA5455;
+    }
+    .menu button:focus {
+            outline: none;
+    }
+    footer {
+        background-color: #E4DCCF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        text-align: center;
+        color: #002B5B;
+        font-size: 12px;
+        width: 100%;
+        margin-top: -10px;
+        bottom: 0;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header (Navbar) -->
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="logo">Telefonix</div>
+            <div class="menu">
+                <button><a href="index.html">1° Tela</a></button>
+                <button class="active">2° Tela</button>
+                <button>3° Tela</button>
+                <button>4° Tela</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da Tela 2 -->
+    <main class="dashboard">
+        <h1>Bem-vindo à Tela 2</h1>
+        <p>Aqui está o conteúdo da segunda tela.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      Made By: Paola Yêda
+    </footer>
+</body>
+</html>
