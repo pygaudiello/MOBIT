@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard Telefonix</title>
-    <style>
-        body {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Telefonix</title>
+  <style>
+      body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #F9F5EB;
-        }
-        header.navbar {
+      }
+      header.navbar {
             background-color: #002B5B;
             padding: 10px 0;
             display: flex;
@@ -19,28 +19,28 @@
             justify-content: center;
             color: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .navbar-content {
+      }
+      .navbar-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-        }
-        .logo {
+      }
+      .logo {
             background-color: #8986b3;
-            padding: 12px 25px;
+            padding: 12px 20px;
             border-radius: 25px;
             font-weight: bold;
-            font-size: 24px;
+            font-size: 22px;
             letter-spacing: 1px;
             text-transform: uppercase;
-        }
-        .menu {
+      }
+      .menu {
             display: flex;
             gap: 25px;
             margin-top: 10px;
-        }
-        .menu button {
+      }
+      .menu button {
             background-color: transparent;
             border: none;
             padding: 12px 25px;
@@ -50,35 +50,35 @@
             color: white;
             font-size: 16px;
             transition: background-color 0.3s ease;
-        }
-        .menu button:hover,
-        .menu button.active {
+      }
+      .menu button:hover,
+      .menu button.active {
             background-color: #EA5455;
-        }
-        .menu button:focus {
+      }
+      .menu button:focus {
             outline: none;
-        }
-        main.dashboard {
+      }
+      main.dashboard {
             padding: 30px 10%;
             margin-top: 20px;
-        }
-        .top-section {
+      }
+      .top-section {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
-        }
-        .cards-container {
+      }
+      .cards-container {
             display: flex;
             align-items: flex-start;
-        }
-        .cards {
+      }
+      .cards {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
-        }
-        .card {
+      }
+      .card {
             background-color: #E4DCCF;
             padding: 25px;
             width: 250px;
@@ -89,20 +89,20 @@
             border-radius: 10px;
             font-size: 16px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+      }
         .card span {
             display: block;
             margin-bottom: 10px;
             font-size: 28px;
-        }
-        .filter-container {
+      }
+      .filter-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
             margin-left: 20px;
-        }
-        .filter-button {
+      }
+      .filter-button {
             background-color: #EA5455;
             padding: 12px 25px;
             border: none;
@@ -110,11 +110,12 @@
             font-weight: bold;
             border-radius: 5px;
             transition: background-color 0.3s ease;
-        }
+            color:#000c1a;
+      }
         .filter-button:hover {
             background-color: #D93F4E;
-        }
-        .filter-menu {
+      }
+      .filter-menu {
             position: absolute;
             top: 105%;
             right: 0;
@@ -127,8 +128,9 @@
             padding: 10px 0;
             transition: opacity 0.3s ease;
             z-index: 10;
-        }
-        .filter-menu button {
+            color:#002B5B;
+      }
+      .filter-menu button {
             background-color: transparent;
             border: none;
             padding: 12px 25px;
@@ -136,34 +138,55 @@
             font-weight: bold;
             width: 100%;
             text-align: left;
-        }
-        .filter-menu button.selected {
+            color: #002B5B;
+      }
+      .filter-menu button.selected {
             background-color: #002B5B;
             color: white;
-        }
-        .date-today {
+      }
+      .date-today {
             margin-top: 2px;
             font-size: 12px;
             font-weight: bold;
-        }
-        .graficos {
-            display: flex;
-            justify-content: space-around;
-            gap: 50px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .grafico-barras {
-            background-color:t;
-            width: 500px;
-            height: 350px;
-            border-radius: 10px;
-        }
-        .grafico-pizza {
-            background-color: transparent;
-            width: 400px;
-            height: 400px;
-        }
+            color: #002B5B;
+      }
+      .graficos {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #002B5B;
+          margin-top: 30px; /* Ajuste aqui o espaçamento superior se necessário */
+          margin-bottom: 20px; /* Adiciona uma margem inferior menor */
+          flex-wrap: wrap;
+      }
+      .grafico-barras {
+          background-color: transparent;
+          color: #002B5B;
+          width: 680px;
+          height: 500px;
+          border-radius: 10px;
+          margin-left: 20px;
+          order: 2;
+      }
+      .grafico-pizza {
+          background-color: transparent;
+          color: #002B5B;
+          width: 400px;
+          height: 500px;
+          margin-right: 20px;
+          order: 1;
+      }
+      footer {
+        background-color: #E4DCCF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        text-align: center;
+        color: #002B5B;
+        font-size: 12px;
+        width: 100%;
+        margin-top: -10px;
+        bottom: 0;
+    }
     </style>
 </head>
 <body>
@@ -207,12 +230,10 @@
             </div>
         </div>
         <div class="graficos">
-            <!-- Gráfico de Barras -->
             <div class="grafico-barras">
                 <canvas id="graficoBarras"></canvas>
             </div>
 
-            <!-- Gráfico de Pizza -->
             <div class="grafico-pizza">
                 <canvas id="graficoPizza"></canvas>
             </div>
@@ -334,7 +355,7 @@
                           datalabels: {
                               anchor: 'end',
                               align: 'start',
-                              color: '#000',
+                              color: '#002B5B',
                               font: { weight: 'bold', size: 14 },
                               formatter: function(value) {
                                   return value;
@@ -344,17 +365,15 @@
                   }
               });
   
-              // Lógica para o gráfico de barras: Clientes Cadastrados por Mês no Último Ano
-              const clientesPorMes = Array(12).fill(0); // Cria um array de 12 meses
+              const clientesPorMes = Array(12).fill(0);
   
-              // Filtra os clientes cadastrados no último ano
               const oneYearAgo = new Date();
               oneYearAgo.setFullYear(today.getFullYear() - 1);
               
               db.clientes.forEach(cliente => {
                   const cadastroDate = new Date(cliente.dataCadastro);
                   if (cadastroDate >= oneYearAgo) {
-                      const monthIndex = cadastroDate.getMonth(); // Retorna o mês do cadastro (0-11)
+                      const monthIndex = cadastroDate.getMonth();
                       clientesPorMes[monthIndex]++;
                   }
               });
@@ -368,12 +387,13 @@
                   type: "bar",
                   data: {
                       labels: [
-                          'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 
+                          'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
                           'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
                       ],
                       datasets: [{
-                          label: 'Clientes Cadastrados por Mês',
+                          label: 'Clientes Cadastrados por Mês no Último Ano',
                           data: clientesPorMes,
+                          color: '#002B5B',
                           backgroundColor: '#EA5455',
                           borderColor: '#B0B0B0',
                           borderWidth: 1
@@ -398,4 +418,7 @@
       carregarDados();
   </script>
 </body>
+<footer>
+  Made By: Paola Yêda
+</footer>
 </html>
