@@ -5,62 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Telefonix - Tela 2</title>
     <style>
+    * {
+        box-sizing: border-box;
+    }
     body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F9F5EB;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #F9F5EB;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
     }
     header.navbar {
-            background-color: #002B5B;
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        background-color: #002B5B;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     .navbar-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
     .logo {
-            background-color: #8986b3;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 22px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        background-color: #8986b3;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 22px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
     .menu a {
         text-decoration: none;
         color: inherit;
     }
     .menu {
-            display: flex;
-            gap: 25px;
-            margin-top: 10px;
+        display: flex;
+        gap: 25px;
+        margin-top: 10px;
     }
     .menu button {
-            background-color: transparent;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+        background-color: transparent;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
     }
     .menu button:hover,
     .menu button.active {
-            background-color: #EA5455;
+        background-color: #EA5455;
     }
     .menu button:focus {
-            outline: none;
+        outline: none;
+    }
+    .table-container {
+        width: 100%;
+        padding: 20px;
+        overflow-x: auto;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        color:#002B5B;
+    }
+    th {
+        background-color: #f4f4f4;
+        color:#002B5B;
+    }
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        color:#002B5B;
+    }
+    .form-container input, .form-container button {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        color:#002B5B;
+    }
+    .form-container input {
+        border: 1px solid #ddd;
+        color:#002B5B;
+    }
+    .form-container button {
+        background-color: #EA5455;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .form-container button:hover {
+        background-color: #c94e4e;
+    }
+    .dashboard {
+        padding: 20px;
+        color:#002B5B;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header h1 {
+        font-size: 24px;
+        color: #002B5B;
+    }
+    .header p {
+        font-size: 16px;
+        color: #666;
+        margin-top: 5px;
     }
     footer {
         background-color: #E4DCCF;
@@ -70,34 +140,207 @@
         color: #002B5B;
         font-size: 12px;
         width: 100%;
-        margin-top: -10px;
-        bottom: 0;
+        margin-top: auto;
+    }
+    /* responsividade */
+    @media (max-width: 500px) {
+        .menu {
+            flex-direction: column;
+            gap: 15px;
+        }
+        .menu button {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 14px;
+        }
+        .form-container input, .form-container button {
+            font-size: 14px;
+        }
+        table th, table td {
+            padding: 8px;
+        }
     }
     </style>
 </head>
 <body>
-    <!-- Header (Navbar) -->
-    <header class="navbar">
-        <div class="navbar-content">
-            <div class="logo">Telefonix</div>
-            <div class="menu">
-                <button><a href="index.html">1° Tela</a></button>
-                <button class="active">2° Tela</button>
-                <button>3° Tela</button>
-                <button>4° Tela</button>
-            </div>
+<header class="navbar">
+    <div class="navbar-content">
+        <div class="logo">Telefonix</div>
+        <div class="menu">
+            <button><a href="index.html">1° Tela</a></button>
+            <button class="active">2° Tela</button>
+            <button>3° Tela</button>
+            <button>4° Tela</button>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- Conteúdo principal da Tela 2 -->
-    <main class="dashboard">
-        <h1>Bem-vindo à Tela 2</h1>
-        <p>Aqui está o conteúdo da segunda tela.</p>
-    </main>
+<main class="dashboard">
+    <div class="header">
+        <h1>Gestão de Planos</h1>
+        <p>Aqui você edita todas as informações relacionadas à planos</p>
+    </div>
+    <div class="form-container">
+        <input type="text" id="search" placeholder="Buscar por nome ou preço" onkeyup="filterPlans()">
+        <button onclick="addPlan()">Adicionar Novo Plano</button>
+    </div>
+    
+    <div class="table-container">
+        <table id="plansTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Franquia Dados</th>
+                    <th>Minutos de Ligação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- os planos listados aparecerão aqui -->
+            </tbody>
+        </table>
+    </div>
+</main>
 
-    <!-- Footer -->
-    <footer>
-      Made By: Paola Yêda
-    </footer>
+<footer>
+    Made By: Paola Yêda
+</footer>
+
+<script>
+    let planos = [];
+
+    // carregamento dos planos - simulação
+    function loadPlans() {
+        const planosJson = `
+            {
+                "planos": [
+                    {
+                        "idPlano": "101",
+                        "nome": "Plano Básico",
+                        "preco": 29.99,
+                        "franquiaDados": 5,
+                        "minutosLigacao": 100,
+                        "descricao": "Plano básico com 5GB de internet e 100 minutos de ligações."
+                    },
+                    {
+                        "idPlano": "102",
+                        "nome": "Plano Pro",
+                        "preco": 49.99,
+                        "franquiaDados": 10,
+                        "minutosLigacao": 300,
+                        "descricao": "Plano intermediário com 10GB de internet e 300 minutos de ligações."
+                    },
+                    {
+                        "idPlano": "103",
+                        "nome": "Plano Master",
+                        "preco": 69.99,
+                        "franquiaDados": 15,
+                        "minutosLigacao": 600,
+                        "descricao": "Plano avançado com 15GB de internet e 600 minutos de ligações."
+                    },
+                    {
+                        "idPlano": "104",
+                        "nome": "Plano Gold",
+                        "preco": 89.99,
+                        "franquiaDados": 20,
+                        "minutosLigacao": 1200,
+                        "descricao": "Plano premium com 20GB de internet e 1200 minutos de ligações."
+                    },
+                    {
+                        "idPlano": "105",
+                        "nome": "Plano Vip",
+                        "preco": 129.99,
+                        "franquiaDados": 50,
+                        "minutosLigacao": 3000,
+                        "descricao": "Plano corporativo com 50GB de internet e 3000 minutos de ligações."
+                    }
+                ]
+            }
+        `;
+
+        planos = JSON.parse(planosJson).planos;
+        renderPlans(planos);
+    }
+
+    // exibir planos
+    function renderPlans(plans) {
+        const tableBody = document.querySelector('#plansTable tbody');
+        tableBody.innerHTML = '';
+
+        plans.forEach(plan => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${plan.nome}</td>
+                <td>R$ ${plan.preco}</td>
+                <td>${plan.franquiaDados} GB</td>
+                <td>${plan.minutosLigacao} min</td>
+                <td>
+                    <button onclick="editPlan(${plan.idPlano})">Editar</button>
+                    <button onclick="deletePlan(${plan.idPlano})">Excluir</button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    // adicionar um novo plano
+    function addPlan() {
+        const name = prompt("Digite o nome do plano:");
+        const price = parseFloat(prompt("Digite o preço do plano:"));
+        const dataLimit = parseInt(prompt("Digite a franquia de dados (GB):"));
+        const minutes = parseInt(prompt("Digite os minutos de ligação:"));
+
+        if (!name || !price || !dataLimit || !minutes) return;
+
+        const newPlan = {
+            idPlano: Date.now().toString(),
+            nome: name,
+            preco: price,
+            franquiaDados: dataLimit,
+            minutosLigacao: minutes,
+            descricao: "Novo plano adicionado"
+        };
+
+        planos.push(newPlan);
+        renderPlans(planos);
+    }
+
+    // editar plano
+    function editPlan(id) {
+        const plan = planos.find(p => p.idPlano === id.toString());
+        if (!plan) return;
+
+        const name = prompt("Editar nome do plano:", plan.nome);
+        const price = parseFloat(prompt("Editar preço do plano:", plan.preco));
+        const dataLimit = parseInt(prompt("Editar franquia de dados (GB):", plan.franquiaDados));
+        const minutes = parseInt(prompt("Editar minutos de ligação:", plan.minutosLigacao));
+
+        if (!name || !price || !dataLimit || !minutes) return;
+
+        plan.nome = name;
+        plan.preco = price;
+        plan.franquiaDados = dataLimit;
+        plan.minutosLigacao = minutes;
+        renderPlans(planos);
+    }
+
+    // deletar plano
+    function deletePlan(id) {
+        planos = planos.filter(plan => plan.idPlano !== id.toString());
+        renderPlans(planos);
+    }
+
+    // filtragem dos planos
+    function filterPlans() {
+        const search = document.getElementById('search').value.toLowerCase();
+        const filteredPlans = planos.filter(plan => {
+            return plan.nome.toLowerCase().includes(search) || plan.preco.toString().includes(search);
+        });
+        renderPlans(filteredPlans);
+    }
+
+    loadPlans();
+</script>
 </body>
 </html>
