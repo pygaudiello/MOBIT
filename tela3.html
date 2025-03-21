@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Telefonix - Tela 3</title>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #F9F5EB;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    header.navbar {
+        background-color: #002B5B;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .navbar-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .logo {
+        background-color: #8986b3;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 22px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    .menu a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .menu {
+        display: flex;
+        gap: 25px;
+        margin-top: 10px;
+    }
+    .menu button {
+        background-color: transparent;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    .menu button:hover,
+    .menu button.active {
+        background-color: #EA5455;
+    }
+    .menu button:focus {
+        outline: none;
+    }
+    .table-container {
+        width: 100%;
+        padding: 20px;
+        overflow-x: auto;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        color:#002B5B;
+    }
+    th {
+        background-color: #f4f4f4;
+        color:#002B5B;
+    }
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        color:#002B5B;
+    }
+    .form-container input, .form-container button {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        color:#002B5B;
+    }
+    .form-container input {
+        border: 1px solid #ddd;
+        color:#002B5B;
+    }
+    .form-container button {
+        background-color: #EA5455;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .form-container button:hover {
+        background-color: #c94e4e;
+    }
+    .dashboard {
+        padding: 20px;
+        color:#002B5B;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header h1 {
+        font-size: 24px;
+        color: #002B5B;
+    }
+    .header p {
+        font-size: 16px;
+        color: #666;
+        margin-top: 5px;
+    }
+    footer {
+        background-color: #E4DCCF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        text-align: center;
+        color: #002B5B;
+        font-size: 12px;
+        width: 100%;
+        margin-top: auto;
+    }
+    /* responsividade */
+    @media (max-width: 500px) {
+        .menu {
+            flex-direction: column;
+            gap: 15px;
+        }
+        .menu button {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 14px;
+        }
+        .form-container input, .form-container button {
+            font-size: 14px;
+        }
+        table th, table td {
+            padding: 8px;
+        }
+    }
+    </style>
+</head>
+<body>
+<header class="navbar">
+    <div class="navbar-content">
+        <div class="logo">Telefonix</div>
+        <div class="menu">
+            <button><a href="index.html">1° Tela</a></button>
+            <button><a href="tela2.html">2° Tela</a></button>
+            <button class="active">3° Tela</button>
+            <button>4° Tela</button>
+        </div>
+    </div>
+</header>
+
+<main class="dashboard">
+    <div class="header">
+        <h1>Gestão de Clientes</h1>
+        <p>Aqui você edita todas as informações relacionadas à clientes</p>
+    </div>
+    <div class="form-container">
+        <input type="text" id="searchName" placeholder="Buscar por nome" onkeyup="filterClients()">
+        <input type="text" id="searchCpf" placeholder="Buscar por CPF" onkeyup="filterClients()">
+        <button onclick="addClient()">Adicionar Novo Cliente</button>
+    </div>
+    
+    <div class="table-container">
+        <table id="clientsTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- os clientes novos da lista apareceriam aqui -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<footer>
+    Made By: Paola Yêda
+</footer>
+
+<script>
+    let clientes = [
+    { "idCliente": "10001", "nome": "João Silva", "cpf": "123.456.789-00", "telefone": "(11) 98765-4321", "email": "joao.silva@email.com", "dataCadastro": "2024-01-01", "idPlanoContratado": ["101", "103"] },
+    { "idCliente": "10002", "nome": "Maria Oliveira", "cpf": "987.654.321-00", "telefone": "(21) 91234-5678", "email": "maria.oliveira@email.com", "dataCadastro": "2024-02-01", "idPlanoContratado": ["102"] },
+    { "idCliente": "10003", "nome": "Carlos Souza", "cpf": "123.789.456-00", "telefone": "(31) 92345-6789", "email": "carlos.souza@email.com", "dataCadastro": "2023-03-01", "idPlanoContratado": ["103", "105"] },
+    { "idCliente": "10004", "nome": "Fernanda Costa", "cpf": "321.654.987-00", "telefone": "(41) 93456-7890", "email": "fernanda.costa@email.com", "dataCadastro": "2024-04-01", "idPlanoContratado": ["104"] },
+    { "idCliente": "10005", "nome": "Roberto Lima", "cpf": "654.321.987-00", "telefone": "(51) 91234-5678", "email": "roberto.lima@email.com", "dataCadastro": "2024-05-01", "idPlanoContratado": ["105"] },
+    { "idCliente": "10006", "nome": "Luciana Pereira", "cpf": "111.222.333-44", "telefone": "(61) 93456-7890", "email": "luciana.pereira@email.com", "dataCadastro": "2024-06-01", "idPlanoContratado": ["101", "102"] },
+    { "idCliente": "10007", "nome": "Ricardo Gomes", "cpf": "555.666.777-88", "telefone": "(71) 91234-5678", "email": "ricardo.gomes@email.com", "dataCadastro": "2024-07-01", "idPlanoContratado": ["102"] },
+    { "idCliente": "10008", "nome": "Beatriz Souza", "cpf": "222.333.444-55", "telefone": "(11) 92345-6789", "email": "beatriz.souza@email.com", "dataCadastro": "2024-08-01", "idPlanoContratado": ["103"] },
+    { "idCliente": "10009", "nome": "Paulo Costa", "cpf": "777.888.999-00", "telefone": "(41) 93456-7890", "email": "paulo.costa@email.com", "dataCadastro": "2025-09-01", "idPlanoContratado": ["104"] },
+    { "idCliente": "10010", "nome": "Tatiane Santos", "cpf": "333.444.555-66", "telefone": "(21) 98765-4321", "email": "tatiane.santos@email.com", "dataCadastro": "2023-10-01", "idPlanoContratado": ["105"] },
+    { "idCliente": "10011", "nome": "Lucas Almeida", "cpf": "555.111.333-22", "telefone": "(11) 98877-1234", "email": "lucas.almeida@email.com", "dataCadastro": "2024-11-01", "idPlanoContratado": ["102"] },
+    { "idCliente": "10012", "nome": "Juliana Ferreira", "cpf": "444.555.666-77", "telefone": "(21) 97654-3210", "email": "juliana.ferreira@email.com", "dataCadastro": "2024-12-01", "idPlanoContratado": ["101", "104"] },
+    { "idCliente": "10013", "nome": "Eduardo Martins", "cpf": "666.777.888-99", "telefone": "(31) 98765-4321", "email": "eduardo.martins@email.com", "dataCadastro": "2024-01-01", "idPlanoContratado": ["103"] },
+    { "idCliente": "10014", "nome": "Tatiane Costa", "cpf": "222.111.333-44", "telefone": "(41) 92345-6789", "email": "tatiane.costa@email.com", "dataCadastro": "2024-02-01", "idPlanoContratado": ["105"] },
+    { "idCliente": "10015", "nome": "Gustavo Oliveira", "cpf": "333.444.777-99", "telefone": "(51) 91987-6543", "email": "gustavo.oliveira@email.com", "dataCadastro": "2025-03-01", "idPlanoContratado": ["102"] },
+    { "idCliente": "10016", "nome": "Renata Silva", "cpf": "555.888.777-66", "telefone": "(61) 93456-7890", "email": "renata.silva@email.com", "dataCadastro": "2024-04-01", "idPlanoContratado": ["104"] },
+    { "idCliente": "10017", "nome": "Thiago Rodrigues", "cpf": "999.888.777-22", "telefone": "(71) 91234-5678", "email": "thiago.rodrigues@email.com", "dataCadastro": "2024-05-01", "idPlanoContratado": ["105"] },
+    { "idCliente": "10018", "nome": "Camila Pereira", "cpf": "777.666.555-44", "telefone": "(31) 93334-5566", "email": "camila.pereira@email.com", "dataCadastro": "2025-06-01", "idPlanoContratado": ["101", "104"] },
+    { "idCliente": "10019", "nome": "Leandro Souza", "cpf": "333.222.111-00", "telefone": "(11) 93456-7890", "email": "leandro.souza@email.com", "dataCadastro": "2024-07-01", "idPlanoContratado": ["102"] },
+    { "idCliente": "10020", "nome": "Juliana Lima", "cpf": "111.444.777-88", "telefone": "(21) 91234-5678", "email": "juliana.lima@email.com","dataCadastro": "2024-08-01", "idPlanoContratado": ["103"]}
+];
+
+function addClient() {
+    const name = prompt("Digite o nome do cliente:");
+    const cpf = prompt("Digite o CPF do cliente:");
+    const phone = prompt("Digite o telefone do cliente:");
+
+    if (!name || !cpf || !phone) return;
+
+    const newClient = {
+        idCliente: Date.now().toString(),
+        nome: name,
+        cpf: cpf,
+        telefone: phone
+    };
+
+    clientes.push(newClient);
+    renderClients(clientes);
+}
+
+// Função para editar um cliente
+function editClient(id) {
+    const client = clientes.find(c => c.idCliente === id.toString());
+    if (!client) return;
+
+    const name = prompt("Editar nome do cliente:", client.nome);
+    const cpf = prompt("Editar CPF do cliente:", client.cpf);
+    const phone = prompt("Editar telefone do cliente:", client.telefone);
+
+    if (!name || !cpf || !phone) return;
+
+    client.nome = name;
+    client.cpf = cpf;
+    client.telefone = phone;
+    renderClients(clientes);
+}
+
+// excluir clientes
+function deleteClient(id) {
+    clientes = clientes.filter(client => client.idCliente !== id.toString());
+    renderClients(clientes);
+}
+
+function renderClients(clientList) {
+    const tableBody = document.querySelector('#clientsTable tbody');
+    tableBody.innerHTML = '';
+
+    clientList.forEach(client => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${client.nome}</td>
+            <td>${formatCPF(client.cpf)}</td>
+            <td>${formatPhone(client.telefone)}</td>
+            <td>
+                <button onclick="editClient(${client.idCliente})">Editar</button>
+                <button onclick="deleteClient(${client.idCliente})">Excluir</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// máscara cpf
+function formatCPF(cpf) {
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+}
+
+// máscara telefone
+function formatPhone(phone) {
+    return phone.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+}
+
+// campo de busca
+function filterClients() {
+    const nameSearch = document.getElementById('searchName').value.toLowerCase();
+    const cpfSearch = document.getElementById('searchCpf').value.toLowerCase();
+
+    const filteredClients = clientes.filter(client => {
+        return (
+            client.nome.toLowerCase().includes(nameSearch) &&
+            client.cpf.includes(cpfSearch)
+        );
+    });
+
+    renderClients(filteredClients);
+}
+
+window.onload = () => renderClients(clientes);
+
+</script>
+</body>
+</html>
